@@ -1,0 +1,19 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - export NODE_OPTIONS=--max_old_space_size=4096
+        - nvm install 18         # Instala a versão 18 do Node.js
+        - nvm use 18             # Usa a versão 18 do Node.js
+        - yarn install
+    build:
+      commands:
+        - yarn build
+  artifacts:
+    baseDirectory: build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
