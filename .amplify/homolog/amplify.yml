@@ -5,7 +5,7 @@ frontend:
       commands:
         - export NODE_OPTIONS=--max_old_space_size=4096
         - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash  # Instala o NVM
-        - source ~/.nvm/nvm.sh  # Carrega o NVM no ambiente
+        - source $HOME/.nvm/nvm.sh  # Carrega o NVM explicitamente
         - nvm install 18         # Instala a versão 18 do Node.js
         - nvm use 18             # Usa a versão 18 do Node.js
         - node -v                # Exibe a versão do Node.js
