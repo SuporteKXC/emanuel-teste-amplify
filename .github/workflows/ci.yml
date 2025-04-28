@@ -1,0 +1,53 @@
+name: Build and Push
+
+on:
+  push:
+    branches:
+      - 'homolog'
+  workflow_dispatch:
+
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_AK_PROD }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SK_PROD }}
+  AWS_DEFAULT_REGION: us-east-1
+  CI: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'yarn'
+
+      - name: Install dependencies and build
+        run: |
+          export NODE_OPTIONS=--openssl-legacy-provider
+          yarn install
+          yarn build
+          ls -la ./build  # Verifica o conteúdo da build
+
+      - name: Sync build folder to S3 (base/)
+        run: aws s3 sync ./build/ s3://wc13-procer-s3-amplify-hml-2/base/ --delete
+
+      - name: Create deployment zip from full S3 structure
+        run: |
+          mkdir Zip
+          cd Zip
+          # Baixa todo o conteúdo do S3 para garantir todas as subpastas
+          aws s3 sync s3://wc13-procer-s3-amplify-hml-2 . --delete
+          ls -la  # Confirma o conteúdo baixado
+          zip -r wc13-procer.zip *
+          aws s3 cp wc13-procer.zip s3://wc13-procer-s3-build-hml-2/wc13-procer.zip
+
+      - name: Deploy to AWS Amplify
+        run: >
+          aws amplify start-deployment
+          --app-id d18uj0a7tvg8r8
+          --region us-east-1
+          --branch-name homolog
+          --source-url s3://wc13-procer-s3-build-hml-2/wc13-procer.zip
