@@ -1,0 +1,86 @@
+export const translations = {
+  alertas: {
+    pt: 'Alertas',
+    en: 'Alerts',
+    de: 'Warnungen',
+    es: 'Alertas',
+  },
+  historicoDeAlertas: {
+    pt: 'Historico de Alertas',
+    en: 'Alert History',
+    de: 'Benachrichtigungsverlauf',
+    es: 'Historial de alertas',
+  },
+  centro: {
+    pt: 'Centro',
+    en: 'Center',
+    de: 'Center',
+    es: 'Centrar',
+  },
+  segmentacao: {
+    pt: 'Segmentação de Clientes',
+    en: 'Customer Segmentation',
+    de: 'Kundensegmentierung',
+    es: 'Segmentación de Clientes',
+  },
+  clientes: {
+    pt: 'Clientes',
+    en: 'Customers',
+    de: 'Kunden',
+    es: 'Clientes',
+  },
+  produtos: {
+    pt: 'Produtos',
+    en: 'Product',
+    de: 'Produkt',
+    es: 'Producto',
+  },
+  tiposDeProduto: {
+    pt: 'Tipos de Produto',
+    en: 'Product types',
+    de: 'Produktarten',
+    es: 'Tipos de Productos',
+  },
+  unidadeDeNegocio: {
+    pt: 'Unidade de Negócio',
+    en: 'Business Unit',
+    de: 'Geschäftsbereiche',
+    es: 'Unidades de Negocios',
+  },
+  linhaDeNegocio: {
+    pt: 'Segmento',
+    en: 'Segment',
+    de: 'Nachverfolgen',
+    es: 'Segmento',
+  },
+  transportadora: {
+    pt: 'Transportadora',
+    en: 'Carrier',
+    de: 'Träger',
+    es: 'Portador',
+  },
+  tiposDepallet: {
+    pt: 'Tipos de Paletes',
+    en: 'Pallet types',
+    de: 'Palettentypen',
+    es: 'Tipos de Palets',
+  },
+  usuarios: {
+    pt: 'Usuários',
+    en: 'Users',
+    de: 'Benutzer',
+    es: 'Usuários',
+  },
+  veiculos: {
+    pt: 'Veículos',
+    en: 'Vehicles',
+    de: 'Fahrzeuge',
+    es: 'Vehículos',
+  },
+  tiposDeVeiculos: {
+    pt: 'Tipos de Veículos',
+    en: 'Vehicles Types',
+    de: 'Fahrzeugtypen',
+    es: 'Tipos de vehículos',
+  },
+};
