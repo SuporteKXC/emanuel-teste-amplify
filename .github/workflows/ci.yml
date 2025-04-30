@@ -1,0 +1,26 @@
+name: Atualizar variáveis no Amplify
+
+on:
+  workflow_dispatch:  # você pode rodar manualmente
+  # Ou use push, pull_request, etc.
+
+jobs:
+  update-vars:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Configurar credenciais AWS
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1  # ajuste conforme necessário
+
+      - name: Atualizar variáveis de ambiente
+        run: |
+          aws amplify update-app \
+            --app-id d1kdwos5dro0ha \
+            --environment-variables VAR1=emanuel,VAR2=claudino,VAR3=teixeira
