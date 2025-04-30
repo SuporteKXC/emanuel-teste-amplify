@@ -30,7 +30,7 @@ jobs:
     outputs:
       image: ${{ steps.define_image.outputs.image }}
     env:
-      REGISTRY_URL: 332895822479.dkr.ecr.us-east-1.amazonaws.com
+      REGISTRY_URL: 865522842129.dkr.ecr.us-east-1.amazonaws.com
       ECR_REPOSITORY: iff-comex-import-api
       IMAGE_TAG: ${{ github.sha }}
       AWS_REGION: us-east-1
@@ -68,7 +68,7 @@ jobs:
     outputs:
       image: ${{ steps.define_image.outputs.image }}
     env:
-      REGISTRY_URL: 332895822479.dkr.ecr.us-east-1.amazonaws.com
+      REGISTRY_URL: 865522842129.dkr.ecr.us-east-1.amazonaws.com
       ECR_REPOSITORY: cm03-import
       IMAGE_TAG: ${{ github.sha }}
       AWS_REGION: us-east-1
@@ -106,7 +106,7 @@ jobs:
     outputs:
       image: ${{ steps.define_image.outputs.image }}
     env:
-      REGISTRY_URL: 332895822479.dkr.ecr.us-east-1.amazonaws.com
+      REGISTRY_URL: 865522842129.dkr.ecr.us-east-1.amazonaws.com
       ECR_REPOSITORY: envo-comex-import-api
       IMAGE_TAG: ${{ github.sha }}
       AWS_REGION: us-east-1

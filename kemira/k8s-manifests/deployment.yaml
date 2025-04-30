@@ -21,7 +21,7 @@ spec:
         nodegroup-name: ClienteAPI01
       containers:
       - name: cm03-import
-        image: 332895822479.dkr.ecr.us-east-1.amazonaws.com/cm03-import:883f352e202b32aa5778341b980bc495920fc15d
+        image: 865522842129.dkr.ecr.us-east-1.amazonaws.com/envo-comex-import-api:latest
         ports:
         - containerPort: 3333
         resources:
