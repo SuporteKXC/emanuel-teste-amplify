@@ -24,7 +24,7 @@ jobs:
         run: |
           aws amplify update-app \
             --app-id d1kdwos5dro0ha \
-            --environment-variables REACT_APP_API_URL=https://new-api.example.com,REACT_APP_ENV=production
+            --environment-variables REACT_APP_API_URL=https://new-api2.example.com,REACT_APP_ENV=production
 
       - name: Trigger Amplify redeploy
         run: |
