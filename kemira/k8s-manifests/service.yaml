@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cm03-import
+  namespace: wc09
+  labels:
+    app: cm03-import
+spec:
+  ports:
+  - port: 80
+    targetPort: 3333
+    protocol: TCP
+  selector:
+    app: cm03-import

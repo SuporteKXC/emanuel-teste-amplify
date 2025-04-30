@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: envo-comex-import-api
+  namespace: envu
+  labels:
+    app: envo-comex-import-api
+  annotations:
+    deployTimestamp: "{{ now | date '2025-03-13 11:45:05' }}"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: envo-comex-import-api
+  template:
+    metadata:
+      labels:
+        app: envo-comex-import-api
+    spec:
+      nodeSelector:
+        nodegroup-name: ClienteAPI01
+      containers:
+      - name: envo-comex-import-api
+        image: 332895822479.dkr.ecr.us-east-1.amazonaws.com/envo-comex-import-api:883f352e202b32aa5778341b980bc495920fc15d
+        ports:
+        - containerPort: 3333
+        resources:
+          limits:
+            cpu: "300m"
+            memory: "256Mi"
+          requests:
+            cpu: "100m"
+            memory: "128Mi"

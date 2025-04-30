@@ -1,0 +1,193 @@
+name: CI Kemira | IFF | ENVU - Comex Import API
+
+on:
+  push:
+    branches:
+      - homolog
+
+jobs:
+  # Validação dos manifestos Kubernetes
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install kubeval
+        run: |
+          curl -sL https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz | tar xz
+          sudo mv kubeval /usr/local/bin/
+
+      - name: Validate Kubernetes manifests for IFF
+        run: kubeval iff/k8s-manifests/deployment.yaml
+
+      - name: Validate Kubernetes manifests for Kemira
+        run: kubeval kemira/k8s-manifests/deployment.yaml
+
+  # Build e push IFF
+  build-and-push-iff:
+    needs: tests
+    outputs:
+      image: ${{ steps.define_image.outputs.image }}
+    env:
+      REGISTRY_URL: 332895822479.dkr.ecr.us-east-1.amazonaws.com
+      ECR_REPOSITORY: iff-comex-import-api
+      IMAGE_TAG: ${{ github.sha }}
+      AWS_REGION: us-east-1
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_EKS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_EKS_SECRET_ACCESS_KEY }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: QEMU Setup
+        uses: docker/setup-qemu-action@v2
+
+      - name: Docker Buildx Setup
+        uses: docker/setup-buildx-action@v2
+
+      - name: ECR Login (via AWS Actions)
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Define Docker image
+        id: define_image
+        run: |
+          IMAGE=$REGISTRY_URL/$ECR_REPOSITORY:$IMAGE_TAG
+          echo "IMAGE=$IMAGE" >> $GITHUB_ENV
+          echo "::set-output name=image::$IMAGE"
+
+      - name: Build and push image to Amazon ECR (IFF)
+        run: |
+          docker build -f iff/Dockerfile -t $IMAGE .
+          docker push $IMAGE
+
+  # Build e push Kemira
+  build-and-push-kemira:
+    needs: tests
+    outputs:
+      image: ${{ steps.define_image.outputs.image }}
+    env:
+      REGISTRY_URL: 332895822479.dkr.ecr.us-east-1.amazonaws.com
+      ECR_REPOSITORY: cm03-import
+      IMAGE_TAG: ${{ github.sha }}
+      AWS_REGION: us-east-1
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_EKS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_EKS_SECRET_ACCESS_KEY }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: QEMU Setup
+        uses: docker/setup-qemu-action@v2
+
+      - name: Docker Buildx Setup
+        uses: docker/setup-buildx-action@v2
+
+      - name: ECR Login (via AWS Actions)
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Define Docker image
+        id: define_image
+        run: |
+          IMAGE=$REGISTRY_URL/$ECR_REPOSITORY:$IMAGE_TAG
+          echo "IMAGE=$IMAGE" >> $GITHUB_ENV
+          echo "::set-output name=image::$IMAGE"
+
+      - name: Build and push image to Amazon ECR (Kemira)
+        run: |
+          docker build -f kemira/Dockerfile -t $IMAGE .
+          docker push $IMAGE
+
+  # Build e push Envu
+  build-and-push-envu:
+    needs: tests
+    outputs:
+      image: ${{ steps.define_image.outputs.image }}
+    env:
+      REGISTRY_URL: 332895822479.dkr.ecr.us-east-1.amazonaws.com
+      ECR_REPOSITORY: envo-comex-import-api
+      IMAGE_TAG: ${{ github.sha }}
+      AWS_REGION: us-east-1
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_EKS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_EKS_SECRET_ACCESS_KEY }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: QEMU Setup
+        uses: docker/setup-qemu-action@v2
+
+      - name: Docker Buildx Setup
+        uses: docker/setup-buildx-action@v2
+
+      - name: ECR Login (via AWS Actions)
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Define Docker image
+        id: define_image
+        run: |
+          IMAGE=$REGISTRY_URL/$ECR_REPOSITORY:$IMAGE_TAG
+          echo "IMAGE=$IMAGE" >> $GITHUB_ENV
+          echo "::set-output name=image::$IMAGE"
+
+      - name: Build and push image to Amazon ECR (Envu)
+        run: |
+          docker build -f envu/Dockerfile -t $IMAGE .
+          docker push $IMAGE
+
+  # Job consolidado para atualizar todos os manifests
+  update-k8s-manifests:
+    runs-on: ubuntu-latest
+    needs:
+      - build-and-push-iff
+      - build-and-push-kemira
+      - build-and-push-envu
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Git config
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Pull latest changes
+        run: git pull origin homolog
+
+      - name: Update IFF manifest
+        run: |
+          sed -i "s|\(image:\s*\).*|\1${{ needs.build-and-push-iff.outputs.image }}|" iff/k8s-manifests/deployment.yaml
+
+      - name: Update Kemira manifest
+        run: |
+          sed -i "s|\(image:\s*\).*|\1${{ needs.build-and-push-kemira.outputs.image }}|" kemira/k8s-manifests/deployment.yaml
+
+      - name: Update Envu manifest
+        run: |
+          sed -i "s|\(image:\s*\).*|\1${{ needs.build-and-push-envu.outputs.image }}|" envu/k8s-manifests/deployment.yaml
+
+      - name: Show all updated manifests
+        run: |
+          echo "--- IFF ---"
+          cat iff/k8s-manifests/deployment.yaml
+          echo "--- Kemira ---"
+          cat kemira/k8s-manifests/deployment.yaml
+          echo "--- Envu ---"
+          cat envu/k8s-manifests/deployment.yaml
+
+      - name: Commit and push changes
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git add .
+          git commit -m "Update images to latest SHA"
+          git push origin homolog
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

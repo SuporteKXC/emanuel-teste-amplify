@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cm03-import
+  namespace: wc09
+  labels:
+    app: cm03-import
+  annotations:
+    deployTimestamp: "{{ now | date '2025-03-13 11:45:05' }}"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cm03-import
+  template:
+    metadata:
+      labels:
+        app: cm03-import
+    spec:
+      nodeSelector:
+        nodegroup-name: ClienteAPI01
+      containers:
+      - name: cm03-import
+        image: 332895822479.dkr.ecr.us-east-1.amazonaws.com/cm03-import:883f352e202b32aa5778341b980bc495920fc15d
+        ports:
+        - containerPort: 3333
+        resources:
+          limits:
+            cpu: "300m"
+            memory: "256Mi"
+          requests:
+            cpu: "100m"
+            memory: "128Mi"

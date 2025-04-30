@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: envo-comex-import-api
+  namespace: envu
+  labels:
+    app: envo-comex-import-api
+spec:
+  ports:
+  - port: 80
+    targetPort: 3333
+    protocol: TCP
+  selector:
+    app: envo-comex-import-api

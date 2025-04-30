@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: iff-comex-import-api
+  namespace: iff
+  labels:
+    app: iff-comex-import-api
+spec:
+  ports:
+  - port: 80
+    targetPort: 3333
+    protocol: TCP
+  selector:
+    app: iff-comex-import-api

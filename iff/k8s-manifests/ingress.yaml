@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    alb.ingress.kubernetes.io/backend-protocol: HTTP
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:332895822479:certificate/3911b28f-3a57-48ec-ba53-fe8658aac913
+    alb.ingress.kubernetes.io/group.name: 'api-3'
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/subnets: 'subnet-0e8fb66ad92950d1c,subnet-0972223027964df4a,subnet-0ae4cdddac4d62821'
+    alb.ingress.kubernetes.io/target-type: ip
+  name: iff-comex-import-api
+  namespace: iff
+spec:
+  ingressClassName: alb
+  rules:
+  - host: iff-comex-import-api.webcol.systems
+    http:
+      paths:
+      - backend:
+          service:
+            name: iff-comex-import-api
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
