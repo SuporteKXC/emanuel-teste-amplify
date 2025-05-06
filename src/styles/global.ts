@@ -1,7 +1,4 @@
 import { createGlobalStyle, css } from 'styled-components';
-import GilroyBold from 'assets/fonts/Gilroy-Bold.otf';
-import GilroySemiBold from 'assets/fonts/Gilroy-SemiBold.otf';
-import GilroyRegular from 'assets/fonts/Gilroy-Regular.otf';
 import { Fonts, ColorScheme, Colors, getScrollbarStyle } from './constants';
 
 const general = css`
@@ -105,16 +102,27 @@ const animations = css`
 
 const fontface = css`
   @font-face {
-    font-family: 'Gilroy-Bold';
-    src: url(${GilroyBold});
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-Regular.woff2') format('woff2'),
+         url('/fonts/Gilroy-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
   }
+
   @font-face {
-    font-family: 'Gilroy-SemiBold';
-    src: url(${GilroySemiBold});
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-SemiBold.woff2') format('woff2'),
+         url('/fonts/Gilroy-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
   }
+
   @font-face {
-    font-family: 'Gilroy-Regular';
-    src: url(${GilroyRegular});
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-Bold.woff2') format('woff2'),
+         url('/fonts/Gilroy-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
   }
 `;
 
@@ -152,8 +160,8 @@ const toastify = css`
 `;
 
 export default createGlobalStyle`
-    ${general};
-    ${fontface};
-    ${toastify};
-    ${animations};
+  ${fontface};
+  ${general};
+  ${toastify};
+  ${animations};
 `;
