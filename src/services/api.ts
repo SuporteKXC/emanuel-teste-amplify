@@ -1,39 +1,70 @@
-import axios from 'axios';
+import axios from "axios";
+const env = import.meta.env;
 
 const environment = {
   local: {
-    api: 'http://localhost:3333/dashboard',
-  },
-  homolog: {
-    api: process.env.REACT_APP_BASE_API_HOMOLOG as string,
+    api: env.VITE_API_URL,
+    apiStocks: env.VITE_STOCKS_API_URL,
+    apiImport: env.VITE_API_IMPORT_URL,
+    apiUploadVoucher: env.VITE_API_UPLOAD_VOUCHER_URL,
+    apiInvoiceImport: process.env.VITE_API_IFF_BRAZIL_INVOICE_IMPORT as string,
+    apiComexExport: env.VITE_COMEX_EXPORT_API,
+    apiGeolocation: process.env.VITE_APP_URL_GEOLOCATION as string,
   },
   production: {
-    api: process.env.REACT_APP_BASE_API as string,
+    api: env.VITE_API_URL,
+    apiStocks: env.VITE_STOCKS_API_URL,
+    apiImport: env.VITE_API_IMPORT_URL,
+    apiUploadVoucher: env.VITE_API_UPLOAD_VOUCHER_URL,
+    apiInvoiceImport: process.env.VITE_API_IFF_BRAZIL_INVOICE_IMPORT as string,
+    apiGeolocation: process.env.VITE_APP_URL_GEOLOCATION as string,
+    apiComexExport: env.VITE_COMEX_EXPORT_API,
   },
 };
+const baseURL =
+  env.VITE_NODE_ENV === "development"
+    ? environment.local
+    : environment.production;
 
-const getBaseURL = () => {
-  if (process.env.NODE_ENV === 'development') {
-    return environment.local;
-  }
+export const dashboardUrl = `https://webcol-dashboard-b6c241cd5fb6.herokuapp.com`;
 
-  if (window.location.hostname === 'webcol-gt-homolog.herokuapp.com') {
-    return environment.homolog;
-  }
-
-  return environment.production;
-};
-
-const baseURL = getBaseURL();
+export const apiDashboard = axios.create({
+  baseURL: dashboardUrl,
+  headers: {},
+  withCredentials: true,
+});
 
 export const showProductionApiAlert =
-  process.env.NODE_ENV === 'development' && baseURL === environment.production;
-
-export const showPHomologAlert = baseURL === environment.homolog;
+  env.VITE_NODE_ENV === "development" && baseURL === environment.production;
 
 export const api = axios.create({
   baseURL: baseURL.api,
   headers: {},
+  withCredentials: true,
+});
+
+export const apiStocks = axios.create({
+  baseURL: baseURL.apiStocks,
+});
+
+export const apiImport = axios.create({
+  baseURL: baseURL.apiImport,
+});
+
+export const apiUploadVoucher = axios.create({
+  baseURL: baseURL.apiUploadVoucher,
+});
+
+export const apiGeolocation = axios.create({
+  baseURL: baseURL.apiGeolocation,
+});
+
+export const apiInvoiceImport = axios.create({
+  baseURL: baseURL.apiInvoiceImport,
+});
+
+export const apiComexExport = axios.create({
+  baseURL: baseURL.apiComexExport,
 });
 
 export const applyQueryString = (

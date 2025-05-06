@@ -1,0 +1,462 @@
+{
+  "comex": {
+    "login": {
+      "subtitle": "Entre com suas credenciais de acesso",
+      "password": "Senha"
+    },
+    "topMenu": {
+      "dashboard": {
+        "title": "Dashboard",
+        "info": "Painel de informações acerca das ordens de compra",
+        "perfomance": {
+          "title": "Performance"
+        },
+        "deliveryIndicators": {
+          "title": "Indicadores de Entrega"
+        }
+      },
+      "documentation": {
+        "title": "Documentação"
+      },
+      "operational": {
+        "title": "Operacional",
+        "info": "Acompanhe todo o processo operacional do produto"
+      },
+      "panels": {
+        "title": "Painéis",
+        "info": "..."
+      },
+      "alerts": {
+        "title": "Alertas",
+        "info": "Acesse os alertas dos produtos"
+      },
+      "config": {
+        "title": "Configurações",
+        "info": "Acesso exclusivo para administradores do sistema",
+        "users": {
+          "title": "Usuários"
+        },
+        "suppliers": {
+          "title": "Fornecedores"
+        },
+        "roles": {
+          "title": "Perfil"
+        },
+        "alertTypes": {
+          "title": "Tipos de Alerta"
+        },
+        "products": {
+          "title": "Produtos"
+        },
+        "creditHistory": {
+          "title": "Histórico de Crédito"
+        },
+        "responsible": {
+          "title": "Responsável"
+        },
+        "justificationType": {
+          "title": "Tipo de Justificativa"
+        },
+        "transitTime": {
+          "title": "Transit Time"
+        }
+      },
+      "copyright": "Todos os direitos reservados"
+    },
+    "operational": {
+      "PO": "PO",
+      "item": "item",
+      "product": "Produto",
+      "description": "Descrição",
+      "details": "Detalhes",
+      "productCode": "Código produto",
+      "productName": "Nome produto",
+      "quantity": "Qtdd.",
+      "NCM": "NCM",
+      "UOM": "UM",
+      "registerDate": "Dt. PO",
+      "shipperAddress": "Origem",
+      "containerType": "Tipo Container",
+      "ATA": "Dt. Atracação (ATA)",
+      "customsClearanceDate": "Desembaraço",
+      "plantDelivery": "Chegada na Planta",
+      "originalGR": "GR Original",
+      "actualGR": "GR Atual",
+      "status": "Status",
+      "all": "Total:",
+      "wasUpdated24h": "Atualizado nas últimas 24 horas",
+      "export": {
+        "PO": "PO",
+        "item": "Item",
+        "product": "Código Produto",
+        "description": "Descrição",
+        "quantity": "Quantidade",
+        "valor": "Valor",
+        "NCM": "NCM",
+        "grOriginal": "GR. Original",
+        "requestedGR": "GR Requisitado",
+        "actualGR": "GR Atual",
+        "dtBooking": "Dt.Booking",
+        "bookingConfirmationDate": "Data da confirmação de booking",
+        "etdDate": "ETD - Previsão de Embarque",
+        "etaDate": "ETA - Previsão de Chegada",
+        "atdDate": "ATD - Embarque realizado",
+        "numBooking": "Numero Booking",
+        "ataDate": "ATA - Chegada realizada",
+        "loadingAt": "Carregamento",
+        "portEntryDate": "Presença de Carga",
+        "recebDocs": "Receb. Docs.",
+        "agProtocoloLI": "Ag. Protocolo LI",
+        "agDeferimentoLI": "Ag. Deferimento LI",
+        "registroDI": "Registro DI",
+        "emissaoNFe": "Emissão NFe",
+        "docsTransito": "Docs. Transito",
+        "plantDelivery": "Chegada Planta",
+        "entrega": "Entrega",
+        "plantDestiny": "Planta Destino",
+        "unidadeMedida": "Unidade de Medida",
+        "status": "Status",
+        "emAndamento": "Em Andamento",
+        "desembaraco": "Desembaraço",
+        "numeroNF": "Número da NF",
+        "registerDate": "Registro Data",
+        "processCritical": "Processo Crítico",
+        "justification": "Justificativa",
+        "supplierCode": "Cod.Fornecedor",
+        "supplier": "Fornecedor",
+        "exception": "Exceção"
+      },
+      "orderItem": {
+        "tracking": {
+          "title": "Rastreamento de itens do pedido",
+          "historic": "Histórico de navios",
+          "historicName": "Nome",
+          "loadedVessel": "Carregado em",
+          "dischargedVessel": "Descarregado em",
+          "IMO": "Número IMO",
+          "MMSI": "Número MMSI",
+          "subscriptionTitle": "Assine o item do pedido para rastreamento de remessa",
+          "waitingPhrase": "Aguardando informações: isso pode levar pelo menos 20 minutos...",
+          "originPort": "Partida atual do porto de origem",
+          "portPredict": "Previsão de chegada ao porto final",
+          "finalPort": "Última previsão de chegada ao porto final",
+          "subscribeButton": "Subscrever",
+          "carrier": "Transportadora",
+          "confirmBook": "Confirmação Booking",
+          "ATD": "ATD",
+          "ATA": "ATA",
+          "presenCarga": "Presença de Carga",
+          "deferimento": "Deferimento",
+          "registroDI": "Registro DI",
+          "desembaraco": "Desembaraço",
+          "NF": "NF",
+          "loading": "Carregamento",
+          "plantDelivery": "Chegada Planta",
+          "grEffective": "GR Efetivo",
+          "ETDFull": "Previsão de Embarque",
+          "ETAFull": "Previsão de Chegada",
+          "ETBFull": "Previsão de Atracação",
+          "ATDFull": "Embarque",
+          "ATAFull": "Atracação",
+          "processStatus": "Status do Processo",
+          "nextStep": "Próxima Etapa",
+          "processType": "Tipo do Processo",
+          "responsiblePo": "Analista Responsável",
+          "freightForwarder": "Agente de carga",
+          "responsiblePo": "Analista responsável",
+          "timelineType": "Tipo de linha do tempo",
+          "entrySAP": "Entrada no SAP",
+          "carrierAgentCode": "Código de Agente de Carga (SCAC)",
+          "carrierAgent": "Agente de Carga:",
+          "shipName": "Nome do Navio:",
+          "containerNumber": "Número do Contêiner",
+          "transportInfo": "Informações de Transporte",
+          "boardingInformation": "Informações de Embarque",
+          "fobValue": "Valor FOB",
+          "customsBrokerProcess": "Processo",
+          "cargoType": "Tipo de Carga"
+        },
+        "map": {
+          "title": "Veja a encomenda no mapa",
+          "updateBtn": "Atualizar",
+          "vessel": "Navio",
+          "shipperAddress": "Origem",
+          "destiny": "Destino",
+          "lastPositUpdate": "Última atualização",
+          "grActual": "GR atual",
+          "plane": "Avião"
+        },
+        "alerts": {
+          "msg": "Mensagem",
+          "type": "Tipo de alerta",
+          "date": "Data de disparo",
+          "rolesModal": {
+            "title": "Perfis vinculados ao alerta"
+          }
+        },
+        "justification": {
+          "justification": "Justificativa",
+          "justifications": "Justificativas",
+          "justificationType": "Tipo de Justificativa",
+          "createJustification": "Criar Justificativa",
+          "createJustificationType": "Criar Tipo de Justificativa",
+          "description": "Descrição",
+          "user": "Usuário",
+          "date": "Data",
+          "confirmButton": "Sim",
+          "okButton": "Ok",
+          "clear": "Limpar"
+        },
+        "modalService": {
+          "confirmationPhrase": "Essa ação será cobrada, deseja continuar? Créditos: ",
+          "confirmButton": "Sim",
+          "cancelButton": "Não"
+        },
+        "flightInfo": {
+          "flight": "Voo",
+          "status": "Status",
+          "origin": "Origem",
+          "destination": "Destino",
+          "departure": "Saída",
+          "estimated": "Previsão de chegada",
+          "duration": "Percurso em",
+          "travelTime": "Total da viagem"
+        },
+        "processCritical": {
+          "title": "Processo crítico",
+          "update": "Alterar processo crítico"
+        }
+      },
+      "cancelPo": {
+        "warn": "Ordem de compra a cancelar:",
+        "clean": "Limpar",
+        "confirm": "Confirmar"
+      },
+      "poEmpty": "Nenhuma POs para exibir"
+    },
+    "panels": {
+      "PO": "PO",
+      "title": "Alteração de GR",
+      "changeGR": "Alteração de GR",
+      "managerial": "Gerencial",
+      "id_product": "ID/Produto",
+      "poNumber": "Número da PO",
+      "poItem": "item da PO",
+      "originalGR": "GR Original",
+      "previsionGR": "GR Previsto",
+      "actualGR": "GR Atual",
+      "plantDelivery": "Chegada Planta",
+      "qty": "Quantidade",
+      "all": "Total:",
+      "qtyAll": "Quantidade Total",
+      "totalToReceive": "Quantidade a receber",
+      "totalReceived": "Quantidade recebido",
+      "processStatus": "Processo Status",
+      "nextStep": "Próxima Etapa",
+      "processTypes": "Tipos de Processos",
+      "dateInitialActualGR": "Data início GR Atual",
+      "dateEndActualGR": "Data final GR Atual",
+      "urgent": "Urgente",
+      "filter": {
+        "productOrDescription": "Produto/Descrição"
+      },
+      "description": "Descrição",
+      "importationAnalyst": "Analista de importação",
+      "responsible_po": "Responsável",
+      "company": "Empresa"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "performace": "Performace",
+      "anticipation": "Antecipação / Antecipação de GR",
+      "aerial": "Aerial",
+      "time": "Tempo médio por etapa"
+    },
+    "filterandButton": {
+      "userSupplier": "Analista",
+      "productCode": "Código produto",
+      "PO": "PO",
+      "progress": "Andamento",
+      "late": "Atrasado",
+      "deadline": "No prazo",
+      "status": "Status",
+      "filter": "Filtrar",
+      "item": "Item",
+      "type": "Tipo",
+      "clear": "Limpar",
+      "register": "Cadastrar",
+      "cancel": "Cancelar",
+      "change": "Alterar",
+      "update": "Atualizar",
+      "delete": "Deletar",
+      "addUser": "Adicionar Usuários",
+      "addUsuario": "Adicionar Usuário",
+      "addSupplier": "Adicionar Fornecedores",
+      "user": "Usuário",
+      "dateExpired": "Data de Expiração",
+      "addprofile": "Novo perfil de acesso",
+      "critical": "Crítico",
+      "normal": "Normal",
+      "block": "Bloquear",
+      "selectPlaceholder": "Escolha uma opção",
+      "importationAnalyst": "Responsável pelo produto da PO",
+      "yes": "Sim",
+      "no": "Não",
+      "registerDateStart": "Data PO inicial",
+      "registerDateEnd": "Data PO final",
+      "urgent": "Urgente",
+      "inProgress": "Em andamento",
+      "channel": "Canal",
+      "yellow": "Amarelo",
+      "red": "Vermelho",
+      "release": "Liberar",
+      "display": "Exibir",
+      "csrName": "CSR Nome",
+      "responsiblePo": "Responsável PO",
+      "dateInitialActualGR": "Data início do prazo",
+      "dateEndActualGR": "Data final prazo",
+      "dateInitialATA": "Data início ATA",
+      "dateEndActualTA": "Data final ATA",
+      "plantDeliveryStart": "Data inicial Chegada na Planta",
+      "plantDeliveryEnd": "Data Final Chegada na Planta",
+      "dateInitialPlant": "Data início da entrega",
+      "dateEndPlant": "Data final da entrega",
+      "poItem": "PO Item",
+      "product": "Produto/Descrição",
+      "shipper": "Fornecedor",
+      "destinationPlant": "Planta de Destino",
+      "canceled": "Canceladas",
+      "criticalProcess": "Processo Crítico",
+      "justification": "Justificativa",
+      "air": "Aéreo",
+      "maritime": "Marítimo",
+      "road": "Rodoviário",
+      "dateCreatedStart": "Data de criação inicial",
+      "dateCreatedEnd": "Data final de criação",
+      "username": "Usuário",
+      "addResponsible": "Adicionar Responsável",
+      "country": "País",
+      "modal": "Modal",
+      "date": "Data",
+      "fobValue": "Valor FOB",
+      "customsBrokerProcess": "Processo",
+      "cargoType": "Tipo de Carga"
+    },
+    "alerts": {
+      "title": "ALERTAS",
+      "all": "Todos:",
+      "critics": "Críticos:",
+      "favorite": "Favoritos:",
+      "alertDate": "Data Alerta",
+      "importationAnalyst": "Analista de importação",
+      "planner": "Planejador",
+      "PO": "PO",
+      "item": "Item",
+      "message": "Mensagem",
+      "product": "Produto",
+      "mark": "Marcar como lido",
+      "alertTypes": "Tipos de Alerta",
+      "read": "Lido",
+      "notRead": "Não Lido",
+      "po": "PO",
+      "poItem": "Item PO",
+      "markAll": "Marcar essa página como lida"
+    },
+    "settings": {
+      "justificationType": {
+        "title": "Tipo de Justificativa",
+        "addjustificationType": "Adicionar Tipo de Justificativa",
+        "category": "Categoria",
+        "dateRegistration": "Data de Cadastro",
+        "description": "Descrição"
+      },
+      "responsible": {
+        "registration": "Cadastro",
+        "title": "Responsável",
+        "name": "Nome",
+        "importSlug": "Slug"
+      },
+      "alertType": {
+        "title": "Tipos de alerta",
+        "dateRegistration": "Data de Cadastro",
+        "description": "Descrição",
+        "addAlertType": "Adicionar Tipos de Alerta",
+        "typesAlert": "Cadastro de novos Tipos de Alerta",
+        "updateAlertType": "Atualizar tipos de alerta",
+        "descTypesAlert": "Descrição do tipo de alerta",
+        "descDetailsAlert": "Detalhes do alerta",
+        "toggleGroupedLabel": "Alerta agrupado",
+        "list": "Lista de alertas"
+      },
+      "product": {
+        "title": "Produtos",
+        "code": "Código",
+        "description": "Descrição",
+        "action": "Ação",
+        "responsibles": "Planejador Responsável",
+        "company": "Empresa",
+        "deadlineDays": "Dias de Prazo",
+        "bu": "Bu",
+        "origem": "Origem",
+        "businessUnit": "Business Unit"
+      },
+      "creditHistory": {
+        "title": "Histórico de crédito",
+        "serviceType": "Tipo de serviço",
+        "userName": "Nome do usuário",
+        "creditCharged": "Crédito cobrado",
+        "dateRegistration": "Data de registro",
+        "dateDeletion": "Data de deleção",
+        "addBtn": "Adicionar histórico de crédito",
+        "createTitle": "Cadastro de nova Cobrança de Crédito",
+        "updateTitle": "Atualizar Cobrança de Crédito",
+        "inputLabelDescription": "Descrição da cobrança de crédito",
+        "inputLabelDetails": "Detalhes da cobrança de crédito",
+        "exportation": {
+          "RegisterDate": "Data de Registro",
+          "ServiceType": "Tipo de Serviço",
+          "UserName": "Nome do Usuário",
+          "CreditCharged": "Crédito Cobrado"
+        }
+      },
+      "transitTime": {
+        "title": "Transit Time",
+        "addBtn": "Adicionar Transit Time",
+        "create": "Cadastro de Transit Time",
+        "created": "Data de registro",
+        "export": "Exportar",
+        "cnpj": "CNPJ",
+        "modal": "Modal",
+        "critical": "Crítico",
+        "portEntryDate": "Presença de Carga",
+        "postImportLicenseReleaseDate": "Deferimento",
+        "protocolMapaIn26Date": "Protocolo mapa",
+        "registroDateDi": "Registro da DI",
+        "customsClearanceDate": "Desembaraço",
+        "nfDate": "Nota Fiscal",
+        "transportDocDeliveryDate": "Documentos Transporte",
+        "loadingTerminal": "Carregamento no terminal",
+        "entregaPlanta": "Chegada na Planta",
+        "grEfetivo": "Entrada no SAP"
+      }
+    },
+    "orderPanel": {
+      "pending": "Pedidos pendentes de liberação",
+      "released": "Pedidos liberados",
+      "delivered": "Pedidos entregues",
+      "finished": "Pedidos finalizados",
+      "transit": "Em Trânsito",
+      "taxClear": "Desembaraço Fiscal"
+    },
+    "message": {
+      "emailInvalid": "  Email inválido",
+      "emailMandatory": "Email obrigatório",
+      "passwordMandatory": "Senha obrigatória",
+      "descAlertMandatory": "Descrição obrigatória para o tipo de aperta",
+      "profileMandatory": "Nome do Perfil Obrigatório",
+      "nameMandatory": "Nome obrigatório",
+      "fieldMandatory": "Campo obrigatório",
+      "fieldNumber": "Por favor, insira um número válido"
+    }
+  }
+}

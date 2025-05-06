@@ -1,9 +1,10 @@
-import React, { useCallback } from 'react';
-import { FormHandles } from '@unform/core';
-import { useSelector, useDispatch } from 'react-redux';
-import type { AppDispatch, RootState } from 'store';
-import { FetchAddressByZipcodeActions as Actions } from 'store/ducks/addressLookup';
-import { AddressLookupData } from 'contracts/AddressLookup';
+import { FormHandles } from "@unform/core";
+import { AddressLookupData } from "contracts/general/AddressLookup";
+import React, { useCallback } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import type { AppDispatch, RootState } from "store";
+import { STATES } from "constants/Common";
+import { FetchAddressByZipcodeActions as Actions } from "store/ducks/general/addressLookup";
 
 /**
  *
@@ -19,8 +20,21 @@ export const useAddressLookup = (formRef?: React.RefObject<FormHandles>) => {
   const onSuccess = useCallback(
     (data: AddressLookupData): void => {
       if (!formRef?.current) return;
-      for (const [field, value] of Object.entries(data)) {
+
+      const { addressUf, ...restData } = data;
+
+      for (const [field, value] of Object.entries(restData)) {
         formRef.current.setFieldValue(field, value);
+      }
+
+      if (!addressUf) return;
+
+      const stateOption = STATES.find(
+        (option) => option.value === addressUf
+      );
+
+      if (stateOption) {
+        formRef.current.setFieldValue("addressState", stateOption);
       }
     },
     [formRef]
@@ -28,20 +42,18 @@ export const useAddressLookup = (formRef?: React.RefObject<FormHandles>) => {
 
   const fetchAddress = useCallback(
     (zipcode: string): void => {
+      if (!formRef?.current) return;
+
       dispatch(Actions.request(zipcode, onSuccess));
     },
-    [dispatch, onSuccess]
+    [dispatch, formRef, onSuccess]
   );
 
-  /**
-   * USe this directly in your input component:
-   */
   const onZipcodeChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const zipcode = e.target.value;
-      const cleanZipcode = zipcode.replace(/\D/g, '');
-      if (cleanZipcode.length !== 8) return;
-      fetchAddress(zipcode);
+      const cleanZipcode = zipcode.replace(/\D/g, "");
+      cleanZipcode.length === 8 && fetchAddress(zipcode);
     },
     [fetchAddress]
   );

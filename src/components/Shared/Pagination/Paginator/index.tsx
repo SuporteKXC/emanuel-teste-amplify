@@ -1,9 +1,10 @@
 import React, { useCallback } from 'react';
-import { Pagination } from 'contracts/Pagination';
+import { Pagination } from "contracts";
 import * as S from './styles';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
-  pagination?: Pagination;
+  pagination?: Pagination | undefined;
   onPageChange?: (page: number) => void;
   neighbors?: number;
 }
@@ -22,37 +23,39 @@ export const Paginator: React.FC<Props> = ({
 
   const ButtonsPresenter = useCallback((): JSX.Element => {
     if (!pagination) return <></>;
+    const { i18n,t } = useTranslation();
 
-    const { currentPage, lastPage } = pagination;
-    if (lastPage <= 1) return <></>;
+    const { current_page, last_page } = pagination;
+    // if (last_page <= 1) return <></>;
 
     const targetSize = neighbors * 2;
     const middle = Math.floor(targetSize / 2);
     const paginatorArray = [];
 
-    let start = currentPage > middle ? currentPage - middle : 1;
-    start = start > lastPage - targetSize ? lastPage - targetSize : start;
+    let start = current_page > middle ? current_page - middle : 1;
+    start = start > last_page - targetSize ? last_page - targetSize : start;
     start = start < 1 ? 1 : start;
-    let t = start + targetSize;
-    t = lastPage < t ? lastPage : t;
-    for (let i = start; i <= t; i++) {
+    let p = start + targetSize;
+    p = last_page < p ? last_page : p;
+    for (let i = start; i <= p; i++) {
       paginatorArray.push(i);
     }
+
 
     return (
       <S.Container>
         <>
           <S.AltButton
             key="first"
-            disabled={currentPage === 1}
+            disabled={current_page === 1}
             onClick={() => handleClick(1)}
           >
-            Primeira
+            {t('general.page.first')}
           </S.AltButton>
           {paginatorArray.map((i) => (
             <S.Button
               key={i}
-              active={currentPage === i}
+              active={current_page === i}
               onClick={() => handleClick(i)}
             >
               {i}
@@ -60,10 +63,10 @@ export const Paginator: React.FC<Props> = ({
           ))}
           <S.AltButton
             key="last"
-            disabled={currentPage === lastPage}
-            onClick={() => handleClick(lastPage)}
+            disabled={current_page === last_page}
+            onClick={() => handleClick(last_page)}
           >
-            Última
+           {t('general.page.last')}
           </S.AltButton>
         </>
       </S.Container>

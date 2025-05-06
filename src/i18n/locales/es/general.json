@@ -1,0 +1,266 @@
+{
+  "general": {
+    "messages": {
+      "privateRouteLoading": "Comprobando los permisos",
+      "privateRouteWarn": "Su funcion no tiene acceso a esta página.",
+      "emailInvalid": "Correo electrónico inválido",
+      "emailMandatory": "Correo electrónico requerido",
+      "passwordMandatory": "Contraseña requerida",
+      "descAlertMandatory": "Descripción del tipo de alerta obligatoria",
+      "profileMandatory": "Nombre de perfil requerido",
+      "nameMandatory": "Nombre obligatorio",
+      "fieldMandatory": "Campo obligatorio",
+      "necessariologar": "Debes estar conectado para agregar justificación",
+      "fieldNumber": "Por favor, ingresa un número válido",
+      "search": "Buscar",
+      "clearSearch": "Limpiar búsqueda",
+      "yes": "Sí",
+      "no": "No"
+    },
+    "asideMenu": {
+      "comex": {
+        "exportation": {
+          "title": "Exportar"
+        },
+        "importation": {
+          "title": "Importar"
+        }
+      },
+      "config": {
+        "name": "Configuración",
+        "roles": {
+          "title": "Funciones"
+        },
+        "users": {
+          "title": "Configuración"
+        },
+        "suppliers": {
+          "title": "Fornecedores"
+        },
+        "alertTypes": {
+          "title": "Tipos de Alerta"
+        },
+        "carriers": {
+          "title": "Transportadores"
+        },
+        "clients": {
+          "title": "Clientes"
+        },
+        "transitTimes": {
+          "title": "Tracking - Tiempo de Tránsito"
+        },
+        "companies": {
+          "title": "Compañías"
+        }
+      },
+      "management": {
+        "name": "Gestión de Inventario",
+        "snapshot": {
+          "title": "Snapshot"
+        },
+        "tracking": {
+          "title": "Tracking Operacional"
+        },
+        "abc": {
+          "title": "Movimienot"
+        }
+      },
+      "tracking": {
+        "name": "Tracking Distribution",
+        "tracking": {
+          "title": "Tracking Factura"
+        },
+        "sales": {
+          "title": "Tracking de Ventas"
+        },
+        "innerNavigation": {
+          "tracking": "Tracking",
+          "trackingSales": "Tracking de Ventas",
+          "deliveryVoucher": "Comprobantes",
+          "deliveryVoucherReport": "Informes"
+        }
+      }
+    },
+    "exportReport": "Exportar Informe",
+    "confirmModal": {
+      "msg": "¿Desea continuar con la eliminación?",
+      "btnY": "Borrar",
+      "btnN": "Cancelar"
+    },
+    "page": {
+      "first": "Primeira",
+      "last": "Ultima"
+    },
+    "config": {
+      "companies": {
+        "cnpj": "CNPJ",
+        "country": "País",
+        "plantCode": "Código de Planta",
+        "consignee": "Consignatario",
+        "account": "Cuenta",
+        "isShow": "Mostrar",
+        "cancelBtn": "Cancelar",
+        "saveBtn": "Guardar",
+        "listCompanies": "Listar Empresas",
+        "addCompany": "Agregar Empresa"
+      },
+      "users": {
+        "title": "Usuarios",
+        "registration": "Registro",
+        "name": "Nombre",
+        "email": "Correo electronico",
+        "codeSap": "Código SAP",
+        "telephone": "Teléfono",
+        "password": "Contraseña",
+        "pictureProfile": "Imagen de perfil",
+        "profile": "Perfil",
+        "companies": "Empresas",
+        "settings": "Configuraciones:",
+        "lastAccess": "Último acceso",
+        "responsibles": "Planificador Responsable",
+        "supplier": "Proveedor",
+        "secondEmail": "Email Secundario",
+        "expiryDate": "Fecha de Vencimiento"
+      },
+      "profile": {
+        "title": "Perfil",
+        "selectModuleTitle": "Módulo",
+        "selectModulePlaceHolder": "Elija el módulo a configurar",
+        "dateRegistration": "Fecha de registro",
+        "type": "Tipo",
+        "actualProfile": "Actualización del perfil",
+        "profileActions": "Acciones de perfil",
+        "newProfile": "Registro de nuevo perfil.",
+        "nameDoProfile": "Nombre del perfil",
+        "newResponsible": "Registro responsable"
+      },
+      "carriers": {
+        "desejaRemover": "¿Quieres eliminar este transportista?",
+        "cancelar": "Cancelar",
+        "salvar": "Ahorrar",
+        "excluir": "Borrar",
+        "fechar": "Cerrar",
+        "listarTransportadoras": "Lista de Transportistas",
+        "criarTransportadora": "Agregar Transportista",
+        "editarTransportadora": "Editar Transportista",
+        "documento": "Documento",
+        "nomeFantasia": "Nombre de fantasía",
+        "codSap": "Código SAP",
+        "tipoDocumento": "Tipo de documento",
+        "pais": "País",
+        "estado": "Estado",
+        "cep": "Código postal",
+        "uf": "UF",
+        "cidade": "Ciudad",
+        "bairro": "Vecindario",
+        "logradouro": "Lugar público",
+        "numero": "Número",
+        "complemento": "Complementar",
+        "latitude": "Latitud",
+        "longitude": "Longitud",
+        "codigoIBGE": "Código IBGE",
+        "buscar": "Buscar",
+        "nome": "Nombre",
+        "editar": "Editar"
+      },
+      "clients": {
+        "desejaRemover": "¿Quieres eliminar este cliente?",
+        "cancelar": "Cancelar",
+        "salvar": "Ahorrar",
+        "excluir": "Borrar",
+        "fechar": "Cerrar",
+        "adicionar": "Ahorrar",
+        "listarClientes": "Lista de Clientes",
+        "criarCliente": "Agregar Cliente",
+        "editarCliente": "Editar Cliente",
+        "documento": "Documento",
+        "nomeFantasia": "Nombre de fantasía",
+        "codSap": "Código SAP",
+        "codPostal": "Código postal",
+        "tipoDocumento": "Tipo de documento",
+        "pais": "País",
+        "estado": "Estado",
+        "cep": "Código postal",
+        "uf": "UF",
+        "cidade": "Ciudad",
+        "bairro": "Vecindario",
+        "logradouro": "Lugar público",
+        "numero": "Número",
+        "complemento": "Complementar",
+        "latitude": "Latitud",
+        "longitude": "Longitud",
+        "codigoIBGE": "Código IBGE",
+        "buscar": "Buscar",
+        "nome": "Nombre",
+        "editar": "Editar",
+        "sunday": "Domingo",
+        "monday": "Lunes",
+        "tuesday": "Martes",
+        "wednesday": "Miércoles",
+        "thursday": "Jueves",
+        "friday": "Viernes",
+        "saturday": "Sábado"
+      },
+      "transitTimes": {
+        "transportadora": "Compañía de Envios",
+        "transitTime": "Tiempo de tránsito",
+        "listarTransitTime": "Tiempos de tránsito listo",
+        "origem": "Origen",
+        "destino": "Destino",
+        "criarTransitTime": "Agregar Tiempo de Tránsito",
+        "editarTransitTime": "Editar Tiempo de Tránsito",
+        "tipo": "Tipo",
+        "ufOrigem": "UF Origen",
+        "ufDestino": "UF Destino",
+        "cidadeOrigem": "Ciudad Origen",
+        "cidadeDestino": "Cuidad de Destino",
+        "horaDeCorte": "Hora de corte",
+        "validade": "Validez",
+        "peso": "Peso",
+        "contagemFracionado": "Recuento Fraccional",
+        "prazoFracionado": "Fecha Límite para Dividir",
+        "contagemLotacao": "Recuento de Capacidad",
+        "prazoLotacao": "Fecha Límite para la Adjudicación",
+        "inicio": "Inicio (días)",
+        "buscar": "Buscar",
+        "editar": "Editar",
+        "cancelar": "Cancelar",
+        "salvar": "Ahorrar",
+        "excluir": "Borrar",
+        "fechar": "Cerrar",
+        "limparFiltro": "Filtro Limpio",
+        "filtrar": "Filtrar",
+        "filtrarTransit": "Filtro de Tiempo de Tránsito"
+      },
+      "suppliers": {
+        "title": "Proveedores",
+        "supplier": "Proveedor",
+        "user": "Usuario",
+        "code": "Código",
+        "userUndefined": "Ningún Usuario Responsable",
+        "dateExpired": "Fecha de Expiración",
+        "dateUndefined": "Fecha no Registrada",
+        "exceptionAsk": "Es una Excepción?",
+        "back": "Volver",
+        "update": "Actualizar"
+      }
+    },
+    "routes": {
+      "/config/roles": "Configuración / Funciones",
+      "/config/users": "Configuración / Usuarios",
+      "/config/alert-types": "Configuración / Tipos de Alerta",
+      "/config/carriers": "Configuración / Transportistas",
+      "/config/clients": "Configuración / Clientes",
+      "/config/tracking-transit-times": "Configuración / Tracking - Tiempo de Tránsito",
+      "/config/products": "Configuración / Productos",
+      "/config/credit-history": "Configuración / Historial de Crédito",
+      "/config/responsible": "Configuración / Responsable",
+      "/config/justification-type": "Configuración / Tipo de Justificación",
+      "/config/transit-time": "Configuración / Tiempo de Tránsito",
+      "/management/tracking": "Gestión de Inventario / Movimiento",
+      "/management/snapshot": "Gestión de Inventario / Snapshot",
+      "/comex/importation": "Comex / Importación",
+      "/comex/exportation": "Comex / Exportación"
+    }
+  }
+}

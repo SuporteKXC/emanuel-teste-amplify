@@ -1,30 +1,27 @@
-import { useCallback } from 'react';
-import { useSelector } from 'react-redux';
-import type { RootState } from 'store';
-import type { UserType } from 'contracts/Auth';
+import { useCallback, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import type { UserType } from "contracts";
+import type { RootState } from "store";
+import { AuthActions } from 'store/ducks';
+import { createSelector } from 'reselect';
+
+const selectProfile = createSelector(
+  (state: RootState) => state.auth,
+  ({ data }) => data?.profile || undefined
+);
 
 export const useAuth = () => {
+  const dispatch = useDispatch();
   const { loading } = useSelector((state: RootState) => state.login);
-  const { data } = useSelector((state: RootState) => state.auth);
-
-  /**
-   * Checks if the user type belongs to any of the given UserTypes.
-   */
-  const userBelongsToAnyOf = useCallback(
-    (...roles: UserType[]): boolean => {
-      if (!data?.profile) return false;
-
-      const { type } = data.profile;
-
-      return roles.some((role) => role === type);
-    },
-    [data]
-  );
+  const profile = useSelector(selectProfile);
+    
+  useEffect(() => {
+    profile && dispatch(AuthActions.request(profile.userId));
+  }, []);
 
   return {
-    userBelongsToAnyOf,
-    isLoggedIn: data !== null && !loading,
-    profile: data?.profile,
+    isLoggedIn: profile !== undefined && !loading && !profile.first_access,
+    profile: profile,
   };
 };
 

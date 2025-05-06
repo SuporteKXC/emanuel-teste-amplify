@@ -30,8 +30,8 @@ export const ModalHeader = styled.div.attrs({
   align-items: center;
   gap: 0 8px;
   justify-content: space-between;
-  border-bottom: 1px solid ${Colors.Gray30}66;
-  background: ${Colors.Gray20};
+  border-bottom: 1px solid ${Colors.Gray30};
+  background: ${Colors.White};
   min-height: 60px;
   font-size: 18px;
   padding: 16px 24px;

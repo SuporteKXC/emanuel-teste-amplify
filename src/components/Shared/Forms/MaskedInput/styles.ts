@@ -4,6 +4,7 @@ import { FieldContainer } from 'styles/components';
 export { FieldError, FieldLabel } from 'styles/components';
 
 export const Container = styled(FieldContainer)`
+  margin-right: 16px;
   input {
     font-size: inherit;
     border-radius: 6px;

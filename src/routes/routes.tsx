@@ -1,57 +1,123 @@
-import { RouteObject, Outlet, Navigate } from 'react-router-dom';
-import React from 'react';
-import type { RouterProps } from 'contracts/Router';
+import { ListAlerts } from "@/pages";
+import { TrackingDeliveryDetail } from "@/pages/TrackingDelivery/Detail";
+import type { RouterProps } from "contracts";
+import { TrackingDelivery } from "pages/TrackingDelivery/List";
+import { Navigate, Outlet, RouteObject } from "react-router-dom";
+import {
+  configRoutes,
+  operationalRoutes,
+  panelsRoutes,
+  alertsRoutes,
+  // antecipationgrRoutes,
+  comexConfigRoutes,
+  snapshotRoutes,
+  trackingRoutes,
+  documentRoutes,
+  salesRoutes,
+  dashboardRoutes,
+  exportRoutes
+} from "routes";
+import { orderFilesRoutes } from "./comex/orderfiles";
 
-// guest
-import loginRoute from './guest/login';
-import forgotMyPasswordRoute from './guest/forgotMyPassword';
-import passwordResetRoute from './guest/passwordReset';
-// authenticated
-import adminsRoutes from './admins';
-import companiesRoutes from './companies';
-import companyMemberRoutes from './companyMembers';
-import dashboardRoutes from './dashboard';
-import warehousesRoutes from './warehouses';
-import warehouseMemberRoutes from './warehouseMembers';
-import stocksRoutes from './stocks';
-import stockOrdersRoutes from './stockOrders';
+import { orderReportRoutes } from "./comex/orderReport";
 
-import { MyAccountPage } from 'pages/Account';
+import { exportOrderReportRoutes } from "./comex/exportOrderReport";
 
-const routes = (props: RouterProps): RouteObject[] => {
-  const { isLoggedIn, location } = props;
 
+export const routes = (props: RouterProps): RouteObject[] => {
+  const { location } = props;
   return [
     {
-      path: '/',
-      element: isLoggedIn ? (
-        <Outlet />
-      ) : (
-        <Navigate to="/login" state={{ from: location }} />
-      ),
+      path: "/",
+      element: <Outlet />,
       children: [
-        adminsRoutes(props),
-        companiesRoutes(props),
-        companyMemberRoutes(props),
-        dashboardRoutes(props),
-        warehousesRoutes(props),
-        warehouseMemberRoutes(props),
-        stocksRoutes(props),
-        stockOrdersRoutes(props),
         {
-          path: 'meus-dados',
-          element: <MyAccountPage />,
+          path: "",
+          element: <Outlet />,
+          children: [
+            {
+              path: "/",
+              element: null,
+            },
+          ],
         },
         {
-          path: 'configuracoes',
-          element: <Navigate to="/configuracoes/clientes" />,
+          path: "comex",
+          element: <Outlet />,
+          children: [
+            {
+              path: "",
+              element: <Navigate to="importation" state={{ from: location }} />,
+            },
+            {
+              path: "export",
+              element: <Outlet />,
+              children: [
+                {
+                  path: "",
+                  element: <Navigate to={'operacional'}/>
+
+                },
+                exportRoutes(props),
+                exportOrderReportRoutes(props)
+              ],
+            },
+            {
+              path: "importation",
+              element: <Outlet />,
+              children: [
+                {
+                  path: "",
+                  element: (
+                    <Navigate to="operacional" state={{ from: location }} />
+                  ),
+                },
+                orderFilesRoutes(props),
+                operationalRoutes(props),
+                panelsRoutes(props),
+                alertsRoutes(props),
+                // antecipationgrRoutes(props),
+                dashboardRoutes(props),
+                orderReportRoutes(props)
+              ],
+            },
+          ],
         },
+        {
+          path: "config",
+          element: <Outlet />,
+          children: [
+            {
+              path: "",
+              element: <Navigate to="roles" state={{ from: location }} />,
+            },
+            configRoutes(props),
+          ],
+        },
+        {
+          path: "management",
+          element: <Outlet />,
+          children: [snapshotRoutes(props), trackingRoutes(props)],
+        },
+        {
+          path: "tracking-delivery",
+          element: <Outlet />,
+          children: [documentRoutes(props), salesRoutes(props)],
+        },
+        {
+          path: "alerts",
+          element: <Outlet />,
+          children:[{
+            path: ":module",
+            element: <ListAlerts/>
+          }]
+        }
       ],
     },
-    loginRoute(props),
-    forgotMyPasswordRoute(props),
-    passwordResetRoute(props),
+    // Seria bom que este fosse a uma page 404
+    {
+      path: "*",
+      element: <Navigate to="/" state={{ from: location }} />,
+    },
   ];
 };
-
-export default routes;

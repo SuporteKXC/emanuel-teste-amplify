@@ -1,4 +1,3 @@
-import { MODAL_DISMISS_ACTION } from 'constants/Common';
 import {
   forwardRef,
   ForwardRefExoticComponent,
@@ -12,8 +11,8 @@ import {
   useState,
 } from 'react';
 import { ButtonMood } from 'styles/components/buttons';
-import ModalPortal from '../ModalPortal';
 import * as S from './styles';
+import ModalPortal from 'components/shared/ModalPortal';
 
 interface DialogConfig {
   title?: string;
@@ -47,7 +46,7 @@ export const ConfirmationDialog: IConfirmationDialog = forwardRef<
     confirmButtonMood: 'primary',
     confirmButtonText: 'Ok',
     cancelButtonMood: 'light',
-    cancelButtonText: MODAL_DISMISS_ACTION,
+    cancelButtonText: 'Fechar',
   });
 
   const overlayClass = useMemo((): string => {

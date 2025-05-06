@@ -1,81 +1,77 @@
-import React, { useRef, useCallback, useEffect, useState } from 'react';
-import { useField } from '@unform/core';
-import * as S from './styles';
+import React, { useRef, useEffect, ComponentProps, ReactElement } from "react";
+import { useField } from "@unform/core";
 
-type Props = JSX.IntrinsicElements['input'] & {
+import * as S from "./styles";
+
+interface InputProps
+  extends ComponentProps<any>,
+    Partial<React.HtmlHTMLAttributes<HTMLInputElement>> {
   name: string;
-  id?: string;
+  type?: string;
+  className?: string;
   label?: string;
-  placeholder?: string;
+  labelStyle?: Record<string, any>;
+  inputStyle?: Record<string, any>;
+  containerStyle?: Record<string, any>;
+  required?: boolean;
   isLoading?: boolean;
-};
+  placeholder?: string;
+}
+
+interface LabelProps {
+  children: React.ReactNode;
+}
+
+type Props = InputProps;
 
 export const Input: React.FC<Props> = ({
   name,
-  id,
   label,
-  placeholder = ' ',
+  type = "text",
+  className = "field-container",
+  labelStyle = {},
+  inputStyle = {},
+  containerStyle = {},
+  required = false,
   isLoading = false,
+  placeholder,
   ...rest
 }) => {
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
   const { fieldName, defaultValue, registerField, error } = useField(name);
-  const [passwdVisible, setPasswdVisible] = useState<boolean>(false);
 
-  const togglePasswordVisibility = useCallback((): void => {
-    setPasswdVisible((value) => !value);
-    if (inputRef.current) {
-      inputRef.current.type === 'password'
-        ? (inputRef.current.type = 'text')
-        : (inputRef.current.type = 'password');
-    }
-  }, []);
+  const Label = ({ children }: LabelProps) => (
+    <S.FieldLabel htmlFor={fieldName} style={labelStyle}>
+      {label}
+      {required && <span>*</span>}
+      {children}
+    </S.FieldLabel>
+  );
 
-  const LabelComponent = useCallback((): JSX.Element => {
-    if (!label) return <></>;
-    return <S.FieldLabel htmlFor={id || fieldName}>{label}</S.FieldLabel>;
-  }, [fieldName, id, label]);
-
-  const ErrorComponent = useCallback((): JSX.Element => {
-    if (!error) return <></>;
-    return <S.FieldError>{error}</S.FieldError>;
-  }, [error]);
+  const Error = () => <S.FieldError>{error}</S.FieldError>;
 
   useEffect(() => {
     registerField({
       name: fieldName,
-      path: 'value',
       ref: inputRef.current,
+      path: "value",
     });
   }, [fieldName, registerField]);
 
   return (
-    <S.Container>
-      <LabelComponent />
-      <S.RelativeWrapper>
-        <input
-          name={fieldName}
-          id={id || fieldName}
-          ref={inputRef}
-          defaultValue={defaultValue}
-          placeholder={placeholder}
-          {...rest}
-        />
-        {isLoading && (
-          <S.ActivityIndicatorContainer>
-            <S.ActivityIndicator />
-          </S.ActivityIndicatorContainer>
-        )}
-        {rest?.type === 'password' && (
-          <S.PasswdToggler
-            title={passwdVisible ? 'Ocultar senha' : 'Mostrar senha'}
-            onClick={togglePasswordVisibility}
-          >
-            {passwdVisible ? <S.EyeOffIcon /> : <S.EyeIcon />}
-          </S.PasswdToggler>
-        )}
-      </S.RelativeWrapper>
-      <ErrorComponent />
-    </S.Container>
+    <S.FieldContainer style={containerStyle} className={className}>
+      {label && <Label>{isLoading && <S.Loading />}</Label>}
+      <S.Input
+        ref={inputRef}
+        type={type}
+        id={fieldName}
+        name={fieldName}
+        defaultValue={defaultValue}
+        style={inputStyle}
+        placeholder={placeholder}
+        {...rest}
+      />
+      {error && <Error />}
+    </S.FieldContainer>
   );
 };

@@ -1,120 +1,19 @@
-import { combineReducers } from 'redux';
+export * from "./general";
+export * from "./comex";
 
-import { fetchAddressByZipcode } from './addressLookup';
-import {
-  createAdmin,
-  deleteAdmin,
-  fetchAdmin,
-  paginateAdmins,
-  updateAdmin,
-} from './admins';
-import {
-  auth,
-  generatePasswordResetToken,
-  impersonate,
-  login,
-  logout,
-  resetPassword,
-  updateAccount,
-} from './auth';
-import {
-  createCompany,
-  fetchCompany,
-  listCompanies,
-  paginateCompanies,
-  updateCompany,
-} from './companies';
-import {
-  createCompanyMember,
-  deleteCompanyMember,
-  fetchCompanyMember,
-  paginateCompanyMembers,
-  updateCompanyMember,
-} from './companyMembers';
-import { paginationParamsCache } from './paginationCache';
-import {
-  listAvailableStocks,
-  listStockRelatedCompanies,
-  listStockRelatedWarehouses,
-} from './stockManager';
-import {
-  createStockOrder,
-  fetchStockOrder,
-  paginateStockOrders,
-} from './stockOrders';
-import { listStocks, paginateStocks, exportStocks } from './stocks';
-import {
-  createWarehouseMember,
-  deleteWarehouseMember,
-  fetchWarehouseMember,
-  paginateWarehouseMembers,
-  updateWarehouseMember,
-} from './warehouseMembers';
-import {
-  createWarehouse,
-  fetchWarehouse,
-  listWarehouses,
-  paginateWarehouses,
-  updateWarehouse,
-} from './warehouses';
-import { fetchVehicleType, listVehicleTypes } from './vehicleTypes';
+import { combineReducers } from "redux";
+import { generalReducers } from "./general"
+import { comexReducers } from "./comex";
+import { managementReducers } from "./management";
+import { trackingDeliveryReducers } from "./trackingDelivery";
+import { dashboardReducers } from "./dashboard"
+import { datatableFilterReducer } from "./export/dataTableFilters";
 
 export default combineReducers({
-  // auth
-  auth,
-  generatePasswordResetToken,
-  impersonate,
-  login,
-  logout,
-  resetPassword,
-  updateAccount,
-  // pagination cache
-  paginationParamsCache,
-  // address lookup
-  fetchAddressByZipcode,
-  // admins
-  createAdmin,
-  deleteAdmin,
-  fetchAdmin,
-  paginateAdmins,
-  updateAdmin,
-  // companies
-  createCompany,
-  fetchCompany,
-  listCompanies,
-  paginateCompanies,
-  updateCompany,
-  // company members
-  createCompanyMember,
-  deleteCompanyMember,
-  fetchCompanyMember,
-  paginateCompanyMembers,
-  updateCompanyMember,
-  // warehouses
-  createWarehouse,
-  fetchWarehouse,
-  listWarehouses,
-  paginateWarehouses,
-  updateWarehouse,
-  // warehouse members
-  createWarehouseMember,
-  deleteWarehouseMember,
-  fetchWarehouseMember,
-  paginateWarehouseMembers,
-  updateWarehouseMember,
-  // stocks
-  paginateStocks,
-  listStocks,
-  exportStocks,
-  // stock orders
-  createStockOrder,
-  fetchStockOrder,
-  paginateStockOrders,
-  // stock manager
-  listAvailableStocks,
-  listStockRelatedCompanies,
-  listStockRelatedWarehouses,
-  // vehicle types
-  fetchVehicleType,
-  listVehicleTypes,
+  ...generalReducers,
+  ...comexReducers,
+  ...managementReducers,
+  ...trackingDeliveryReducers,
+  ...dashboardReducers,
+  datatableFilterReducer
 });

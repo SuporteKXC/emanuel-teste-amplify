@@ -1,0 +1,178 @@
+{
+  "trackingDelivery": {
+    "indicators": {
+      "pending": "Pending",
+      "transit": "In transit",
+      "delivered": "Delivered",
+      "onTime": "on time",
+      "withDelay": "delayed",
+      "withoutDeadline": "without deadline"
+    },
+    "statusFilter": {
+      "all": "All",
+      "withoutStatus": "Without Status",
+      "transit": "In Transit",
+      "pending": "Pending",
+      "faturado": "Invoiced",
+      "transitDelay": "In Transit Delayed",
+      "delivered": "Delivered",
+      "canceled": "Canceled",
+      "return": "Return"
+    },
+    "fields": {
+      "documentNumber": "Invoice No",
+      "emissionDate": "Emission Date",
+      "deadlineDate": "Deadline Date",
+      "deliveryDate": "Delivery Date",
+      "origin": "Origin",
+      "destination": "Destination",
+      "carrier": "Carrier",
+      "client": "Client",
+      "sender": "Sender",
+      "recipient": "Recipient",
+      "shipmentNumber": "Shipment No"
+    },
+    "filterForm": {
+      "applyFilters": "Apply Filters",
+      "clearFilters": "Clear Filters",
+      "select": "Select...",
+      "search": "Search...",
+      "searchEmpty": "No results found"
+    },
+    "header": {
+      "location": "Location",
+      "locations": "Locations",
+      "justification": "Justification",
+      "justifications": "Justifications",
+      "comment": "Comment",
+      "deliveryDate": "Delivery Date",
+      "recalculateDeadline": "Recalculate Deadline",
+      "currentDeadline": "Current Deadline",
+      "recalculating": "Recalculating...",
+      "newDeadline": "Recalculated Deadline",
+      "updateCarrier": "Change Carrier",
+      "occurrences": "Occurrences"
+    },
+    "general": {
+      "close": "Close",
+      "cancel": "Cancel",
+      "save": "Save",
+      "back": "Back",
+      "new": "New"
+    },
+    "status": {
+      "transito": "Em trânsito",
+      "transito_atraso": "Em trânsito com atraso",
+      "transito_sem_prazo": "Em trânsito sem prazo",
+      "entregue": "Entregue",
+      "entregue_cliente": "Entregue ao cliente",
+      "entregue_atraso": "Entregue com atraso",
+      "entregue_sem_prazo": "Entregue sem prazo",
+      "sem_status": "Sem status",
+      "sem_status_atraso": "Sem status com atraso",
+      "sem_status_sem_prazo": "Sem status sem prazo",
+      "cancelada": "Cancelada",
+      "devolucao": "Devolução"
+    },
+    "geolocation": {
+      "adicionarGeolocation": "Submit Occurrences",
+      "arquivoXML": "Geolocation XLS file",
+      "fechar": "Close",
+      "importar": "Import",
+      "placeholder": "Drag and drop your files here, or click to select",
+      "sucess": "Sucess",
+      "error": "Error",
+      "baixarModelo": "Download template",
+      "importError": "Could not import this spreadsheet"
+    },
+    "nfsImport": {
+      "adicionarNota": "Add Invoice",
+      "arquivoXML": "Invoice XML file",
+      "fechar": "Close",
+      "importar": "Import",
+      "placeholder": "Drag and drop your files here, or click to select",
+      "sucess": "Sucess",
+      "error": "Error"
+    }
+  },
+  "salesOrder":{
+    "filter":{
+      "salesOrder": "Sales Order",
+      "numeroPedido": "Order number",
+      "dataEmissao": "Issue date",
+      "dataPrazo": "Deadline",
+      "dataEntrega": "Delivery date",
+      "justJustifications": "Just Justifications",
+      "deliveryDocumentNumber": "Delivery Document Number",
+      "documentNumber": "Invoice",
+      "plantCode": "Plant Code",
+      "sellType": "Sell Type",
+      "import": "Local Selling",
+      "export": "Export"
+    },
+    "cards":{
+      "pendenteFat": "Pending invoicing",
+      "faturado": "Invoiced",
+      "transito": "In transit",
+      "entregue": "Delivered"
+    },
+    "columns":{
+      "salesOrder": "Sales Order",
+      "numeroPedido": "Order No.",
+      "dataRegister": "Dt.Registro",
+      "dataAta": "Dt.Atracação",
+      "dataEmissao": "Issue date",
+      "dataPrazo": "Deadline",
+      "numEntrega": "Document Delivery Number",
+      "dataFaturamento": "Invoicing date",
+      "dataEntrega": "Delivery date",
+      "nfNumero": "Invoice No.",
+      "origem": "Origin",
+      "cliente": "Client",
+      "criadoPor": "Created by"
+    },
+    "drawer":{
+      "pedidoVenda": "Sales order",
+      "entrega": "Delivery",
+      "nota": "Invoice",
+      "dataEmissao": "Issue Date",
+      "prazo": "Deadline",
+      "faturado": "Invoiced on",
+      "rota": "Route",
+      "tabs": {
+        "detalhes": "Details S.O.",
+        "justificativa": "Justifications",
+        "entrega": "Delivery",
+        "produto": "Products NFe"
+      },
+      "details": {
+        "origem": "Origin",
+        "destino": "Destination",
+        "transportadora": "Carrier",
+        "item": "Item",
+        "codigo": "Code",
+        "descricao": "Description",
+        "un": "Unit",
+        "quantidade": "Quantity"
+      },
+      "justification": {
+        "data": "Date",
+        "tipo": "Type",
+        "comentario": "Comment",
+        "aprovar": "Approve",
+        "reprovar": "Reject",
+        "novaJustificativa": "New Justification",
+        "selecione": "Select...",
+        "comentarioPlaceholder": "Enter your comment here...",
+        "salvar": "Save",
+        "limpar": "Clear"
+      },
+      "delivery":{
+        "adicionarEntrega": "Add delivery number",
+        "entrega": "Delivery",
+        "limpar": "Clear",
+        "salvar": "Save"
+      }
+    }
+  }
+}

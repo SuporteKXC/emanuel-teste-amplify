@@ -1,0 +1,268 @@
+{
+  "general": {
+    "messages": {
+      "privateRouteLoading": "Checking for permissions",
+      "privateRouteWarn": "Your profile does not have access to this page.",
+      "emailInvalid": "Invalid email",
+      "emailMandatory": "Email required",
+      "passwordMandatory": "Password required",
+      "descAlertMandatory": "Description of mandatory alert type",
+      "profileMandatory": "Profile name required",
+      "nameMandatory": "Mandatory name",
+      "fieldMandatory": "Required field",
+      "necessariologar": "You must be logged in to add justification",
+      "fieldNumber": "Please enter a valid number",
+      "search": "Search",
+      "clearSearch": "Clear Search",
+      "yes": "Yes",
+      "no": "No"
+    },
+    "asideMenu": {
+      "comex": {
+        "exportation": {
+          "title": "Export"
+        },
+        "importation": {
+          "title": "Import"
+        }
+      },
+      "config": {
+        "name": "Settings",
+        "roles": {
+          "title": "Roles"
+        },
+        "users": {
+          "title": "Users"
+        },
+        "suppliers": {
+          "title": "Suppliers"
+        },
+        "alertTypes": {
+          "title": "Alert Types"
+        },
+        "carriers": {
+          "title": "Carriers"
+        },
+        "clients": {
+          "title": "Clients"
+        },
+        "transitTimes": {
+          "title": "Tracking - Transit Time"
+        },
+        "companies": {
+          "title": "Companies"
+        }
+      },
+      "management": {
+        "name": "Stock Management",
+        "snapshot": {
+          "title": "Snapshot"
+        },
+        "sales": {
+          "title": "Tracking for Sales"
+        },
+        "tracking": {
+          "title": "Tracking Operational"
+        },
+        "abc": {
+          "title": "Movement"
+        }
+      },
+      "tracking": {
+        "name": "Tracking Distribution",
+        "tracking": {
+          "title": "Tracking Invoice"
+        },
+        "sales": {
+          "title": "Tracking Sales"
+        },
+        "innerNavigation": {
+          "tracking": "Tracking",
+          "trackingSales": "Tracking Sales",
+          "deliveryVoucher": "Proof",
+          "deliveryVoucherReport": "Reports"
+        }
+      }
+    },
+    "exportReport": "Export Report",
+    "confirmModal": {
+      "msg": "Do you want to proceed with the deletion?",
+      "btnY": "Delete",
+      "btnN": "Cancel"
+    },
+    "page": {
+      "first": "Fist",
+      "last": "Last"
+    },
+    "config": {
+      "companies": {
+        "cnpj": "CNPJ",
+        "country": "Country",
+        "plantCode": "Plant Code",
+        "consignee": "Consignee",
+        "account": "Account",
+        "isShow": "Show",
+        "cancelBtn": "Cancel",
+        "saveBtn": "Save",
+        "listCompanies": "List Companies",
+        "addCompany": "Add Company"
+      },
+      "users": {
+        "title": "Users",
+        "registration": "Registration",
+        "name": "Name",
+        "email": "E-mail",
+        "codeSap": "SAP Code",
+        "telephone": "Telephone",
+        "password": "Password",
+        "pictureProfile": "Profile Picture",
+        "profile": "Profile",
+        "companies": "Companies",
+        "settings": "Settings:",
+        "lastAccess": "Last access",
+        "responsibles": "Responsible Planner",
+        "supplier": "Supplier",
+        "secondEmail": "Secondary Email",
+        "expiryDate": "Expiry Date"
+      },
+      "profile": {
+        "title": "Profile",
+        "selectModuleTitle": "Módulo",
+        "selectModulePlaceHolder": "Choose the module to configure",
+        "dateRegistration": "Registration date",
+        "type": "Type",
+        "actualProfile": "Update Profile",
+        "profileActions": "Profile Actions",
+        "newProfile": "New Profile registration.",
+        "nameDoProfile": "Profile Name",
+        "newResponsible": "Responsible Registration"
+      },
+      "carriers": {
+        "desejaRemover": "Do you want to remove this carrier?",
+        "cancelar": "Cancel",
+        "salvar": "Add",
+        "excluir": "Delete",
+        "fechar": "Close",
+        "listarTransportadoras": "List Carriers",
+        "criarTransportadora": "Add Carrier",
+        "editarTransportadora": "Edit Carrier",
+        "documento": "Document",
+        "nomeFantasia": "Fantasy name",
+        "codSap": "SAP code",
+        "tipoDocumento": "Document Type",
+        "pais": "Country",
+        "estado": "State",
+        "cep": "Zip code",
+        "uf": "UF",
+        "cidade": "City",
+        "bairro": "Neighborhood",
+        "logradouro": "Public place",
+        "numero": "Number",
+        "complemento": "Complement",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "codigoIBGE": "IBGE Code",
+        "buscar": "Search",
+        "nome": "Name",
+        "editar": "Edit"
+      },
+      "clients": {
+        "desejaRemover": "Do you want to remove this client?",
+        "cancelar": "Cancel",
+        "salvar": "Add",
+        "excluir": "Delete",
+        "adicionar": "Add",
+        "fechar": "Close",
+        "listarClientes": "List Clients",
+        "criarCliente": "Add Client",
+        "editarCliente": "Edit Client",
+        "documento": "Document",
+        "nomeFantasia": "Fantasy name",
+        "codSap": "SAP code",
+        "tipoDocumento": "Document Type",
+        "pais": "Country",
+        "estado": "State",
+        "cep": "Zip code",
+        "uf": "UF",
+        "cidade": "City",
+        "bairro": "Neighborhood",
+        "logradouro": "Public place",
+        "numero": "Number",
+        "complemento": "Complement",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "codigoIBGE": "IBGE Code",
+        "buscar": "Search",
+        "nome": "Name",
+        "editar": "Edit",
+        "sunday": "Sunday",
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday",
+        "saturday": "Saturday"
+      },
+      "transitTimes": {
+        "transportadora": "Shipping company",
+        "transitTime": "Transit Time",
+        "listarTransitTime": "Listar Transit Times",
+        "origem": "Origin",
+        "destino": "Destiny",
+        "criarTransitTime": "Add Transit Time",
+        "editarTransitTime": "Edit Transit Time",
+        "tipo": "Type",
+        "ufOrigem": "UF Origin",
+        "ufDestino": "UF destiny",
+        "cidadeOrigem": "City",
+        "cidadeDestino": "City Destination",
+        "horaDeCorte": "Cutting Time",
+        "validade": "Validity",
+        "peso": "Weight",
+        "contagemFracionado": "Fractional Count",
+        "prazoFracionado": "Deadline Fractional",
+        "contagemLotacao": "Capacity Count",
+        "prazoLotacao": "Deadline for Allotment",
+        "inicio": "Start (days)",
+        "buscar": "Search",
+        "editar": "Edit",
+        "cancelar": "Cancel",
+        "salvar": "Save",
+        "excluir": "Delete",
+        "fechar": "Close",
+        "limparFiltro": "Clear Filter",
+        "filtrar": "Filter",
+        "filtrarTransit": "Filter Transit Time"
+      },
+      "suppliers": {
+        "title": "Suppliers",
+        "supplier": "Supplier",
+        "user": "User",
+        "code": "Code",
+        "userUndefined": "No Responsible User",
+        "dateExpired": "Expiration Date",
+        "dateUndefined": "Unregistered Date",
+        "exceptionAsk": "Is it an Exception?",
+        "back": "Back",
+        "update": "Update"
+      }
+    },
+    "routes": {
+      "/config/roles": "Settings / Roles",
+      "/config/users": "Settings / Users",
+      "/config/alert-types": "Settings / Alert Types",
+      "/config/carriers": "Settings / Carriers",
+      "/config/clients": "Settings / Clients",
+      "/config/tracking-transit-times": "Settings / Tracking Transit Times",
+      "/config/products": "Settings / Products",
+      "/config/credit-history": "Settings / Credit History",
+      "/config/responsible": "Settings / Responsible",
+      "/config/justification-type": "Settings / Justification Type",
+      "/config/transit-time": "Settings / Transit Time",
+      "/management/tracking": "Stock Management / Movement",
+      "/management/snapshot": "Stock Management / Snapshot",
+      "/comex/importation": "Comex / Importation",
+      "/comex/exportation": "Comex / Exportation"
+    }
+  }
+}

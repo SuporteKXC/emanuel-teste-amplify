@@ -1,4 +1,9 @@
 import { createGlobalStyle, css } from 'styled-components';
+import GilroyHeavy from 'assets/fonts/Gilroy-Heavy.otf';
+import GilroyBold from 'assets/fonts/Gilroy-Bold.otf';
+import GilroySemiBold from 'assets/fonts/Gilroy-SemiBold.otf';
+import GilroyMedium from 'assets/fonts/Gilroy-Medium.otf';
+import GilroyRegular from 'assets/fonts/Gilroy-Regular.otf';
 import { Fonts, ColorScheme, Colors, getScrollbarStyle } from './constants';
 
 const general = css`
@@ -14,7 +19,7 @@ const general = css`
   body {
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
-    background: ${Colors.Gray20};
+    background: #fff;
     font-family: ${Fonts.GilroyRegular}, sans-serif;
     color: ${ColorScheme.Text};
     font-size: 16px;
@@ -102,27 +107,24 @@ const animations = css`
 
 const fontface = css`
   @font-face {
-    font-family: 'Gilroy';
-    src: url('/fonts/Gilroy-Regular.woff2') format('woff2'),
-         url('/fonts/Gilroy-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
+    font-family: 'Gilroy-Heavy';
+    src: url(${GilroyHeavy});
   }
-
   @font-face {
-    font-family: 'Gilroy';
-    src: url('/fonts/Gilroy-SemiBold.woff2') format('woff2'),
-         url('/fonts/Gilroy-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
+    font-family: 'Gilroy-Bold';
+    src: url(${GilroyBold});
   }
-
   @font-face {
-    font-family: 'Gilroy';
-    src: url('/fonts/Gilroy-Bold.woff2') format('woff2'),
-         url('/fonts/Gilroy-Bold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
+    font-family: 'Gilroy-SemiBold';
+    src: url(${GilroySemiBold});
+  }
+  @font-face {
+    font-family: 'Gilroy-Medium';
+    src: url(${GilroyMedium});
+  }
+  @font-face {
+    font-family: 'Gilroy-Regular';
+    src: url(${GilroyRegular});
   }
 `;
 
@@ -160,8 +162,8 @@ const toastify = css`
 `;
 
 export default createGlobalStyle`
-  ${fontface};
-  ${general};
-  ${toastify};
-  ${animations};
+    ${general};
+    ${fontface};
+    ${toastify};
+    ${animations};
 `;

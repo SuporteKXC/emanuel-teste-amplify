@@ -1,58 +1,46 @@
-import React, { useRef, useCallback, useEffect, useState } from 'react';
-import ReactSelect, {
-  Props as SelectProps,
-  GroupBase,
-  SelectInstance,
-} from 'react-select';
-import { useField } from '@unform/core';
-import { SelectOption } from 'contracts/Common';
+import React, { useRef, useEffect, useState } from "react";
 
-import * as S from './styles';
+import ReactSelect, { GroupBase, Props as SelectProps, SelectInstance } from "react-select";
+import * as S from "./styles";
+import { useField } from "@unform/core";
+import { SelectOption } from "contracts";
 
-interface Props
-  extends SelectProps<SelectOption, false, GroupBase<SelectOption>> {
+interface InputProps
+  extends SelectProps<SelectOption, true, GroupBase<SelectOption>> {
   name: string;
-  id?: string;
   label?: string;
-  onChange?: (option: SelectOption | null) => void;
+  labelStyle?: Record<string, any>;
+  required?: boolean;
+  placeholder?: string;
+  value?: any;
+  scheme?: "primary" | "secondary" | "tertiary" | any;
 }
+
+type Props = InputProps;
 
 export const Select: React.FC<Props> = ({
   name,
-  id,
   label,
+  labelStyle,
+  required,
+  placeholder,
   options,
-  placeholder = ' ',
-  onChange,
+  value,
+  scheme,
   ...rest
 }) => {
   const selectRef = useRef(null);
+  const [lastUpdate, setLastUpdate] = useState<Date>(new Date());
+  const { fieldName, registerField, defaultValue, error } = useField(name);
 
-  const { fieldName, defaultValue, registerField, error } = useField(name);
-  const [hasSelection, setHasSelection] = useState<boolean>(false);
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_lastUpdate, setLastUpdate] = useState<number>(
-    new Date().getUTCMilliseconds()
+  const Label = () => (
+    <S.FieldLabel htmlFor={fieldName} style={labelStyle}>
+      {label}
+      {required && <span>*</span>}
+    </S.FieldLabel>
   );
 
-  const handleChange = useCallback(
-    (option: SelectOption | null): void => {
-      onChange && onChange(option);
-      setHasSelection(option !== null);
-    },
-    [onChange]
-  );
-
-  const LabelComponent = useCallback((): JSX.Element => {
-    if (!label) return <></>;
-    return <S.FieldLabel htmlFor={id || fieldName}>{label}</S.FieldLabel>;
-  }, [fieldName, id, label]);
-
-  const ErrorComponent = useCallback((): JSX.Element => {
-    if (!error) return <></>;
-    return <S.FieldError>{error}</S.FieldError>;
-  }, [error]);
+  const Error = () => <S.FieldError>{error}</S.FieldError>;
 
   useEffect(() => {
     registerField({
@@ -75,31 +63,32 @@ export const Select: React.FC<Props> = ({
         option: SelectOption
       ) => {
         ref?.setValue(option, 'select-option', option);
-        setLastUpdate(new Date().getUTCMilliseconds());
+        setLastUpdate(new Date());
       },
       clearValue(ref: any) {
         ref?.setValue(null, 'select-option', null);
-        setLastUpdate(new Date().getUTCMilliseconds());
+        setLastUpdate(new Date());
       },
     });
   }, [fieldName, registerField, rest.isMulti]);
 
+  useEffect(() => {}, [lastUpdate]);
+
   return (
-    <S.Container>
-      <LabelComponent />
+    <S.FieldContainer className="select-container">
+      {label && <Label />}
       <ReactSelect
-        className={hasSelection ? 'has-selection' : ''}
-        ref={selectRef}
-        id={id || fieldName}
         name={fieldName}
-        options={options}
-        styles={S.DefaultSelectStyle}
-        placeholder={placeholder}
-        onChange={handleChange}
+        styles={S.customStyles[scheme ? scheme : "primary"] as any}
         defaultValue={defaultValue}
+        ref={selectRef}
+        classNamePrefix="select"
+        placeholder={placeholder}
+        options={options}
+        closeMenuOnSelect
         {...rest}
       />
-      <ErrorComponent />
-    </S.Container>
+      {error && <Error />}
+    </S.FieldContainer>
   );
 };

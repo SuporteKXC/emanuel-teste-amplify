@@ -1,58 +1,76 @@
-import { css } from 'styled-components';
+import { css } from "styled-components";
 
 export enum Fonts {
-  GilroyBold = 'Gilroy-Bold',
-  GilroySemiBold = 'Gilroy-SemiBold',
-  GilroyRegular = 'Gilroy-Regular',
-  OpenSans = 'Open Sans',
+  GilroyHeavy = "Gilroy-Heavy",
+  GilroyBold = "Gilroy-Bold",
+  GilroySemiBold = "Gilroy-SemiBold",
+  GilroyMedium = "Gilroy-Medium",
+  GilroyRegular = "Gilroy-Regular",
+  OpenSans = "Open Sans",
 }
 
 export enum Colors {
-  White = '#FFFFFF',
-  Blue = '#1AB1F3',
-  Blue10 = '#DCF3FD',
-  Magenta = '#DE1745',
-  Orange = '#EE7C2C',
-  Green = '#00C152',
-  Peach = '#FDEBDE',
-  Gray10 = '#F5F5F5',
-  Gray20 = '#F0F0F0',
-  Gray30 = '#E9E9E9',
-  Gray40 = '#D1D1D1',
-  Gray50 = '#96969A',
-  Gray55 = '#6E6E6E',
-  Gray60 = '#57575E',
-  Gray65 = '#474756',
-  Gray70 = '#2E2E36',
-  Pink10 = '#FF8989',
-  Red50 = '#EB5E5E',
-  Red70 = '#A70000',
-  Yellow = '#FFE577',
-  Yellow30 = '#D3D300',
-  Yellow50 = '#FFBB30',
-  Yellow70 = '#A76C00',
+  DarkBlue = "#292D41",
+  BackgroundBlack = "#222229",
+  Black = "#000",
+  White = "#FFFFFF",
+  Blue = "#1AB1F3",
+  Blue10 = "#DDEFFF",
+  Blue30 = "#0085FF",
+  Magenta = "#DE1745",
+  PaleRed = "#fdb4b4",
+  Orange = "#EE7C2C",
+  Gold = "#EEB22C",
+  PaleGold = "#ffebb0",
+  Green = "#0CC769",
+  Peach = "#FDEBDE",
+  Gray10 = "#F5F5F5",
+  Gray20 = "#F0F0F0",
+  Gray30 = "#E9E9E9",
+  Gray40 = "#D1D1D1",
+  Gray45 = "#CACACC",
+  Gray50 = "#96969A",
+  Gray60 = "#57575E",
+  Gray70 = "#2E2E36",
+  Pink = "#FF007A",
+  Violet = "#7000FF",
+  Yellow = "#FFB320",
 }
 
 export enum ColorScheme {
-  Text = Colors.Gray70,
-  LightText = Colors.Gray50,
-  Primary = Colors.Blue,
+  Text = Colors.Gray60,
+  LightText = Colors.White,
+  Primary = Colors.DarkBlue,
   Secondary = Colors.Green,
   Danger = Colors.Magenta,
+  Warning = Colors.Gold,
   DisabledField = Colors.Gray20,
+  Alert = Colors.PaleGold,
 }
 
-export enum StockOrderStatusColor {
-  Pendente = '#3498DB',
-  Separacao = '#f1c40f',
-  Contagem = '#8e44ad',
-  Finalizado = '#2ecc71',
-  Cancelado = '#e74c3c',
+export enum OrderStatusColor {
+  Aguardando = "#3498DB",
+  Chegada = "#673AB7",
+  Iniciado = "#F9A82A",
+  Finalizado = "#0F97A7",
+  Liberado = "#3BBCA3",
+  NoShow = "#FE6043",
+  Cancelado = "#EC1751",
+}
+
+export enum OrderItemStatus {
+  Normal = "#1ABC9C",
+  Critical = "#E99898",
+}
+
+export enum Channel {
+  Yellow = Colors.PaleGold,
+  Red = Colors.PaleRed,
 }
 
 export const getScrollbarStyle = (
   bgColor = Colors.Gray30,
-  fgColor = Colors.Gray60
+  fgColor = Colors.Gray50
 ) => {
   return css`
     ::-webkit-scrollbar {
@@ -71,29 +89,6 @@ export const getScrollbarStyle = (
     }
     ::-webkit-scrollbar-track {
       background-color: ${bgColor};
-      border-radius: 6px;
-    }
-  `;
-};
-
-export const leftPanelScrollbarStyle = () => {
-  return css`
-    ::-webkit-scrollbar {
-      -webkit-appearance: none;
-    }
-    ::-webkit-scrollbar:vertical {
-      width: 5px;
-    }
-    ::-webkit-scrollbar:horizontal {
-      height: 5px;
-    }
-    ::-webkit-scrollbar-thumb {
-      border-radius: 6px;
-      border: none;
-      background-color: ${Colors.Gray65};
-    }
-    ::-webkit-scrollbar-track {
-      background-color: none;
       border-radius: 6px;
     }
   `;

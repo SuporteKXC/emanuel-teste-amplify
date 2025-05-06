@@ -1,0 +1,176 @@
+{
+  "trackingDelivery": {
+    "indicators": {
+      "pending": "Pendiente",
+      "transit": "En tránsito",
+      "delivered": "Entregado",
+      "onTime": "a tiempo",
+      "withDelay": "con retraso",
+      "withoutDeadline": "sin fecha límite"
+    },
+    "statusFilter": {
+      "all": "Todos",
+      "withoutStatus": "Sin Estado",
+      "transit": "En Tránsito",
+      "pending": "Pendiente",
+      "faturado": "Facturado",
+      "transitDelay": "En Tránsito con Retraso",
+      "delivered": "Entregado",
+      "canceled": "Cancelado",
+      "return": "Devolución"
+    },
+    "fields": {
+      "documentNumber": "Nº de Factura",
+      "emissionDate": "Fecha de Emisión",
+      "deadlineDate": "Fecha Límite",
+      "deliveryDate": "Fecha de Entrega",
+      "origin": "Origen",
+      "destination": "Destino",
+      "carrier": "Transportista",
+      "client": "Cliente",
+      "shipmentNumber": "Nº de Envío"
+    },
+    "filterForm": {
+      "applyFilters": "Aplicar Filtros",
+      "clearFilters": "Limpiar Filtros",
+      "select": "Seleccionar...",
+      "search": "Buscar...",
+      "searchEmpty": "No se encontraron resultados"
+    },
+    "header": {
+      "location": "Ubicación",
+      "locations": "Ubicaciones",
+      "justification": "Justificación",
+      "justifications": "Justificaciones",
+      "comment": "Comentario",
+      "deliveryDate": "Fecha de Entrega",
+      "recalculateDeadline": "Recalcular Plazo",
+      "currentDeadline": "Plazo Actual",
+      "recalculating": "Recalculando...",
+      "newDeadline": "Plazo Recalculado",
+      "updateCarrier": "Cambiar Transportista",
+      "occurrences": "Ocurrencias"
+    },
+    "general": {
+      "close": "Cerrar",
+      "cancel": "Cancelar",
+      "save": "Guardar",
+      "back": "Volver",
+      "new": "Nueva"
+    },
+    "status": {
+      "transito": "Em trânsito",
+      "transito_atraso": "Em trânsito com atraso",
+      "transito_sem_prazo": "Em trânsito sem prazo",
+      "entregue": "Entregue",
+      "entregue_cliente": "Entregue ao cliente",
+      "entregue_atraso": "Entregue com atraso",
+      "entregue_sem_prazo": "Entregue sem prazo",
+      "sem_status": "Sem status",
+      "sem_status_atraso": "Sem status com atraso",
+      "sem_status_sem_prazo": "Sem status sem prazo",
+      "cancelada": "Cancelada",
+      "devolucao": "Devolução"
+    },
+    "geolocation": {
+      "adicionarGeolocation": "Enviar Ocurrencias",
+      "arquivoXML": "Archivo XLS de Geolocalización",
+      "fechar": "Cerrar",
+      "importar": "Importar",
+      "placeholder": "Arrastre y suelte sus archivos aquí o haga clic para seleccionar",
+      "sucess": "éxito",
+      "error": "error",
+      "baixarModelo": "Descargar plantilla",
+      "importError": "No se puede importar esta hoja de cálculo"
+    },
+    "nfsImport": {
+      "adicionarNota": "Agregar Nota",
+      "arquivoXML": "Archivo XML de Nota",
+      "fechar": "Cerrar",
+      "importar": "Importar",
+      "placeholder": "Arrastre y suelte sus archivos aquí o haga clic para seleccionar",
+      "sucess": "éxito",
+      "error": "error"
+    }
+  },
+  "salesOrder": {
+    "filter": {
+      "salesOrder": "Órdenes de venta",
+      "numeroPedido": "Número de pedido",
+      "dataEmissao": "Fecha de emisión",
+      "dataPrazo": "Fecha límite",
+      "dataEntrega": "Fecha de entrega",
+      "justJustifications": "Solo Justificaciones",
+      "deliveryDocumentNumber": "Número de Documento de Entrega",
+      "documentNumber": "Factura",
+      "plantCode": "Código de Planta",
+      "sellType": "Tipo de Venta",
+      "import": "Venta Local",
+      "export": "Exportar"
+    },
+    "cards": {
+      "pendenteFat": "Pendiente de facturación",
+      "faturado": "Facturado",
+      "transito": "En tránsito",
+      "entregue": "Entregado"
+    },
+    "columns": {
+      "salesOrder": "Órdenes de venta",
+      "numeroPedido": "Núm. de pedido",
+      "dataRegister": "Dt.Registro",
+      "dataAta": "Dt.Atracação",
+      "dataEmissao": "Fch. Emisión",
+      "dataPrazo": "Fch. Límite",
+      "dataFaturamento": "Fch. Facturación",
+      "numEntrega": "Núm. de entrega",
+      "dataEntrega": "Fch. Entrega",
+      "nfNumero": "Núm. NFe",
+      "origem": "Origen",
+      "cliente": "Cliente",
+      "criadoPor": "Creado por"
+    },
+    "drawer": {
+      "pedidoVenda": "Pedido de venta",
+      "entrega": "Entrega",
+      "nota": "Nota fiscal",
+      "dataEmissao": "Fecha de emisión",
+      "prazo": "Plazo",
+      "faturado": "Facturado en",
+      "rota": "Ruta",
+      "tabs": {
+        "detalhes": "Detalles S.O.",
+        "justificativa": "Justificaciones",
+        "entrega": "Entrega",
+        "produto": "Productos NFe"
+      },
+      "details": {
+        "origem": "Origen",
+        "destino": "Destino",
+        "transportadora": "Transportista",
+        "item": "Ítem",
+        "codigo": "Código",
+        "descricao": "Descripción",
+        "un": "Un",
+        "quantidade": "Cantidad"
+      },
+      "justification": {
+        "data": "Fecha",
+        "tipo": "Tipo",
+        "comentario": "Comentario",
+        "aprovar": "Aprobar",
+        "reprovar": "Rechazar",
+        "novaJustificativa": "Nueva justificación",
+        "selecione": "Seleccione...",
+        "comentarioPlaceholder": "Escribe aquí tu comentario...",
+        "salvar": "Guardar",
+        "limpar": "Limpiar"
+      },
+      "delivery": {
+        "adicionarEntrega": "Agregar número de entrega",
+        "entrega": "Entrega",
+        "limpar": "Limpiar",
+        "salvar": "Guardar"
+      }
+    }
+  }
+}

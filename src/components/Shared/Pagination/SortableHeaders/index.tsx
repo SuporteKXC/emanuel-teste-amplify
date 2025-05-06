@@ -1,4 +1,4 @@
-import type { SortingParams } from 'contracts/Common';
+import type { SortingParams } from "contracts";
 import React, {
   createContext,
   useCallback,
@@ -14,7 +14,7 @@ interface PaginationContext {
 }
 
 const HeadersContext = createContext<PaginationContext>({
-  order: { direction: 'asc' },
+  order: { orderByDirection: 'asc' },
 });
 
 interface SortableGroupProps
@@ -26,8 +26,6 @@ interface SortableGroupProps
 interface SortableHeaderProps {
   label: string | JSX.Element;
   column: string;
-  padding?: boolean;
-  disabled?: boolean;
 }
 
 export const SortableHeadersGroup: React.FC<SortableGroupProps> = ({
@@ -35,31 +33,34 @@ export const SortableHeadersGroup: React.FC<SortableGroupProps> = ({
   onSort,
   children,
 }) => {
-  const [order, setOrder] = useState<SortingParams>({
+  const [order, setOrder] = useState<SortingParams & { dirty: boolean }>({
     ...(currentSort && {
       orderBy: currentSort?.orderBy,
-      direction: currentSort?.direction || 'asc',
+      orderByDirection: currentSort?.orderByDirection || 'asc',
     }),
     dirty: false,
   });
 
   const changeOrder = useCallback((column: string) => {
     setOrder((state) => {
-      const { orderBy, direction } = state;
+      const { orderBy, orderByDirection } = state;
 
       if (orderBy !== column) {
-        return { ...state, orderBy: column, direction: 'asc', dirty: true };
-      } else if (direction === 'asc') {
-        return { ...state, direction: 'desc', dirty: true };
+        return { ...state, orderBy: column, orderByDirection: 'asc', dirty: true };
+      } else if (orderByDirection === 'asc') {
+        return { ...state, orderByDirection: 'desc', dirty: true };
       } else {
-        return { ...state, direction: 'asc', dirty: true };
+        return { ...state, orderByDirection: 'asc', dirty: true };
       }
     });
   }, []);
 
   const handleOnSort = useCallback((): void => {
     if (order?.orderBy && order.dirty && onSort) {
-      onSort(order);
+      onSort({
+        orderBy: order.orderBy,
+        orderByDirection: order.orderByDirection 
+      });
     }
   }, [order, onSort]);
 
@@ -77,21 +78,19 @@ export const SortableHeadersGroup: React.FC<SortableGroupProps> = ({
 export const SortableHeader: React.FC<SortableHeaderProps> = ({
   label,
   column,
-  padding = false,
-  disabled = false,
 }) => {
   const { order, changeOrder } = useContext(HeadersContext);
 
   const Icon = useCallback((): JSX.Element => {
     if (order?.orderBy !== column) return <S.SortIcon />;
-    if (order.direction === 'asc') return <S.SortUpIcon />;
+    if (order.orderByDirection === 'asc') return <S.SortUpIcon />;
     return <S.SortDownIcon />;
-  }, [column, order.direction, order?.orderBy]);
+  }, [column, order?.orderByDirection, order?.orderBy]);
 
   return (
     <div>
-      <S.SortableHeader onClick={() => changeOrder?.(column)} padding={padding} disabled={disabled}>
-        {label} {!disabled && <Icon />}
+      <S.SortableHeader onClick={() => changeOrder?.(column)}>
+        {label} <Icon />
       </S.SortableHeader>
     </div>
   );

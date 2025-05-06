@@ -11,12 +11,13 @@ export const BaseButtonStyle = css`
   border-radius: 6px;
   font-family: ${Fonts.GilroyBold};
   gap: 0 0.5rem;
-  :hover {
+  :hover:not(:disabled) {
     animation: ZoomIn 200ms linear;
     animation-fill-mode: forwards;
   }
   :disabled {
     opacity: 0.5;
+    cursor: not-allowed;
   }
 `;
 
@@ -25,6 +26,7 @@ export type ButtonMood =
   | 'primary'
   | 'secondary'
   | 'danger'
+  | 'warning'
   | 'outlinedDanger'
   | 'light'
   | 'void';
@@ -75,6 +77,11 @@ const applyButtonMood = (mood?: ButtonMood) => {
         background-color: transparent;
         color: ${Colors.Magenta};
       `;
+    case 'warning':
+      return css`
+        background-color: ${Colors.Gold};
+        color: ${Colors.White};
+      `;
     case 'light':
       return css`
         background-color: ${Colors.Gray30};
@@ -93,7 +100,7 @@ const applyButtonMood = (mood?: ButtonMood) => {
     case 'primary':
     default:
       return css`
-        background-color: ${Colors.Blue};
+        background-color: ${Colors.DarkBlue};
         color: ${Colors.White};
       `;
   }

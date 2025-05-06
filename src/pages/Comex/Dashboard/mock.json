@@ -1,0 +1,367 @@
+{
+    "total": {
+        "total": {
+            "delay": 26,
+            "punctual": 74,
+            "meta": 15,
+            "media": "12.46",
+            "items_delay": 60,
+            "items_punctual": 175
+        },
+        "port_entry_date": {
+            "delay": 5,
+            "punctual": 95,
+            "meta": 2,
+            "media": "1.15"
+        },
+        "post_import_license_release_date": {
+            "delay": 11,
+            "punctual": 89,
+            "meta": 2,
+            "media": "1.36"
+        },
+        "protocol_mapa_in26_date": {
+            "delay": 0,
+            "punctual": 100,
+            "meta": 1,
+            "media": "0.01"
+        },
+        "data_do_registro_da_di": {
+            "delay": 60,
+            "punctual": 40,
+            "meta": 1,
+            "media": "6.11"
+        },
+        "nf_date": {
+            "delay": 43,
+            "punctual": 57,
+            "meta": 1,
+            "media": "2.16"
+        },
+        "transport_doc_delivery_date": {
+            "delay": 14,
+            "punctual": 86,
+            "meta": 2,
+            "media": "0.54"
+        },
+        "loading_at_the_terminal": {
+            "delay": 37,
+            "punctua": 63,
+            "meta": 3,
+            "media": "2.46"
+        },
+        "entrega_na_planta": {
+            "delay": 10,
+            "punctual": 90,
+            "meta": 0,
+            "media": "0.38"
+        },
+        "gr_efetivo": {
+            "delay": 0,
+            "punctual": 100,
+            "meta": 3,
+            "media": "0.00"
+        },
+        "responsabilities": [
+            {
+                "name": "none",
+                "title": "Sem responsável",
+                "quantity": 47,
+                "total_percent": 20,
+                "delay_percent": 100
+            }
+        ]
+    },
+    "empresaX": {
+        "total": {
+            "delay": 24,
+            "punctual": 76,
+            "meta": 20,
+            "media": "12.36",
+            "items_delay": 20,
+            "items_punctual": 65
+        },
+        "port_entry_date": {
+            "delay": 0,
+            "punctual": 100,
+            "meta": 2,
+            "media": "1.08"
+        },
+        "post_import_license_release_date": {
+            "delay": 0,
+            "punctual": 100,
+            "meta": 9,
+            "media": "1.12"
+        },
+        "protocol_mapa_in26_date": {
+            "delay": 1,
+            "punctual": 99,
+            "meta": 0,
+            "media": "0.01"
+        },
+        "data_do_registro_da_di": {
+            "delay": 75,
+            "punctual": 25,
+            "meta": 1,
+            "media": "5.69"
+        },
+        "nf_date": {
+            "delay": 56,
+            "punctual": 44,
+            "meta": 1,
+            "media": "2.82"
+        },
+        "transport_doc_delivery_date": {
+            "delay": 26,
+            "punctual": 74,
+            "meta": 1,
+            "media": "0.94"
+        },
+        "loading_at_the_terminal": {
+            "delay": 11,
+            "punctua": 89,
+            "meta": 5,
+            "media": "1.32"
+        },
+        "entrega_na_planta": {
+            "delay": 2,
+            "punctual": 98,
+            "meta": 0,
+            "media": "0.02"
+        },
+        "gr_efetivo": {
+            "delay": 0,
+            "punctual": 100,
+            "meta": 1,
+            "media": "0.00"
+        },
+        "responsabilities": [
+            {
+                "name": "none",
+                "title": "Sem responsável",
+                "quantity": 7,
+                "total_percent": 8,
+                "delay_percent": 100
+            }
+        ]
+    },
+    "empresaY": {
+        "total": {
+            "delay": 27,
+            "punctual": 73,
+            "meta": 15,
+            "media": "12.51",
+            "items_delay": 40,
+            "items_punctual": 110
+        },
+        "port_entry_date": {
+            "delay": 7,
+            "punctual": 93,
+            "meta": 2,
+            "media": "1.19"
+        },
+        "post_import_license_release_date": {
+            "delay": 18,
+            "punctual": 82,
+            "meta": 2,
+            "media": "1.49"
+        },
+        "protocol_mapa_in26_date": {
+            "delay": 0,
+            "punctual": 100,
+            "meta": 1,
+            "media": "0.01"
+        },
+        "data_do_registro_da_di": {
+            "delay": 52,
+            "punctual": 48,
+            "meta": 1,
+            "media": "6.34"
+        },
+        "nf_date": {
+            "delay": 36,
+            "punctual": 64,
+            "meta": 1,
+            "media": "1.78"
+        },
+        "transport_doc_delivery_date": {
+            "delay": 7,
+            "punctual": 93,
+            "meta": 2,
+            "media": "0.32"
+        },
+        "loading_at_the_terminal": {
+            "delay": 53,
+            "punctua": 47,
+            "meta": 3,
+            "media": "3.11"
+        },
+        "entrega_na_planta": {
+            "delay": 15,
+            "punctual": 85,
+            "meta": 0,
+            "media": "0.59"
+        },
+        "gr_efetivo": {
+            "delay": 0,
+            "punctual": 100,
+            "meta": 3,
+            "media": "0.01"
+        },
+        "responsabilities": [
+            {
+                "name": "none",
+                "title": "Sem responsável",
+                "quantity": 40,
+                "total_percent": 27,
+                "delay_percent": 100
+            }
+        ]
+    },
+    "company1": {
+        "total": {
+            "delay": 27,
+            "punctual": 73,
+            "meta": 15,
+            "media": "12.51",
+            "items_delay": 40,
+            "items_punctual": 110
+        },
+        "port_entry_date": {
+            "delay": 7,
+            "punctual": 93,
+            "meta": 2,
+            "media": "1.19"
+        },
+        "post_import_license_release_date": {
+            "delay": 18,
+            "punctual": 82,
+            "meta": 2,
+            "media": "1.49"
+        },
+        "protocol_mapa_in26_date": {
+            "delay": 0,
+            "punctual": 100,
+            "meta": 1,
+            "media": "0.01"
+        },
+        "data_do_registro_da_di": {
+            "delay": 52,
+            "punctual": 48,
+            "meta": 1,
+            "media": "6.34"
+        },
+        "nf_date": {
+            "delay": 36,
+            "punctual": 64,
+            "meta": 1,
+            "media": "1.78"
+        },
+        "transport_doc_delivery_date": {
+            "delay": 7,
+            "punctual": 93,
+            "meta": 2,
+            "media": "0.32"
+        },
+        "loading_at_the_terminal": {
+            "delay": 53,
+            "punctua": 47,
+            "meta": 3,
+            "media": "3.11"
+        },
+        "entrega_na_planta": {
+            "delay": 15,
+            "punctual": 85,
+            "meta": 0,
+            "media": "0.59"
+        },
+        "gr_efetivo": {
+            "delay": 0,
+            "punctual": 100,
+            "meta": 3,
+            "media": "0.01"
+        },
+        "responsabilities": [
+            {
+                "name": "none",
+                "title": "Sem responsável",
+                "quantity": 40,
+                "total_percent": 27,
+                "delay_percent": 100
+            }
+        ]
+    },
+    "company2": {
+        "total": {
+            "delay": 27,
+            "punctual": 73,
+            "meta": 15,
+            "media": "12.51",
+            "items_delay": 40,
+            "items_punctual": 110
+        },
+        "port_entry_date": {
+            "delay": 7,
+            "punctual": 93,
+            "meta": 2,
+            "media": "1.19"
+        },
+        "post_import_license_release_date": {
+            "delay": 18,
+            "punctual": 82,
+            "meta": 2,
+            "media": "1.49"
+        },
+        "protocol_mapa_in26_date": {
+            "delay": 0,
+            "punctual": 100,
+            "meta": 1,
+            "media": "0.01"
+        },
+        "data_do_registro_da_di": {
+            "delay": 52,
+            "punctual": 48,
+            "meta": 1,
+            "media": "6.34"
+        },
+        "nf_date": {
+            "delay": 36,
+            "punctual": 64,
+            "meta": 1,
+            "media": "1.78"
+        },
+        "transport_doc_delivery_date": {
+            "delay": 7,
+            "punctual": 93,
+            "meta": 2,
+            "media": "0.32"
+        },
+        "loading_at_the_terminal": {
+            "delay": 53,
+            "punctua": 47,
+            "meta": 3,
+            "media": "3.11"
+        },
+        "entrega_na_planta": {
+            "delay": 15,
+            "punctual": 85,
+            "meta": 0,
+            "media": "0.59"
+        },
+        "gr_efetivo": {
+            "delay": 0,
+            "punctual": 100,
+            "meta": 3,
+            "media": "0.01"
+        },
+        "responsabilities": [
+            {
+                "name": "none",
+                "title": "Sem responsável",
+                "quantity": 40,
+                "total_percent": 27,
+                "delay_percent": 100
+            }
+        ]
+    }
+}

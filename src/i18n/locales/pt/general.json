@@ -1,0 +1,267 @@
+{
+  "general": {
+    "messages": {
+      "privateRouteLoading": "Checando por permissões",
+      "privateRouteWarn": "Seu perfil não tem acesso a esta página.",
+      "emailInvalid": "Email inválido",
+      "emailMandatory": "Email obrigatório",
+      "passwordMandatory": "Senha obrigatória",
+      "descAlertMandatory": "Descrição do tipo de alerta obrigatória",
+      "profileMandatory": "Nome do perfil obrigatório",
+      "nameMandatory": "Nome obrigatório",
+      "fieldMandatory": "Campo obrigatório",
+      "necessariologar": "Você precisa estar logado para adicionar justificação",
+      "fieldNumber": "Por favor, insira um número válido",
+      "search": "Buscar",
+      "clearSearch": "Limpar busca",
+      "yes": "Sim",
+      "no": "Não"
+    },
+    "asideMenu": {
+      "comex": {
+        "exportation": {
+          "title": "Exportação"
+        },
+        "importation": {
+          "title": "Importação"
+        }
+      },
+      "config": {
+        "name": "Configurações",
+        "roles": {
+          "title": "Perfis"
+        },
+        "suppliers": {
+          "title": "Fornecedores"
+        },
+        "users": {
+          "title": "Usuários"
+        },
+        "alertTypes": {
+          "title": "Tipos de Alerta"
+        },
+        "carriers": {
+          "title": "Transportadoras"
+        },
+        "clients": {
+          "title": "Clientes"
+        },
+        "transitTimes": {
+          "title": "Tracking - Transit Time"
+        },
+        "companies": {
+          "title": "Empresas"
+        }
+      },
+      "management": {
+        "name": "Gestão de Estoque",
+        "snapshot": {
+          "title": "Snapshot"
+        },
+        "tracking": {
+          "title": "Tracking Operacional"
+        },
+        "abc": {
+          "title": "Movimentação"
+        }
+      },
+      "tracking": {
+        "name": "Tracking Distribuição",
+        "tracking": {
+          "title": "Tracking de Nota Fiscal"
+        },
+        "sales": {
+          "title": "Tracking de Pedido"
+        },
+        "innerNavigation": {
+          "tracking": "Tracking",
+          "trackingSales": "Tracking de Pedido",
+          "deliveryVoucher": "Comprovantes",
+          "deliveryVoucherReport": "Relatórios"
+        }
+      }
+    },
+    "exportReport": "Exportar Relatório",
+    "confirmModal": {
+      "msg": "Deseja prosseguir com a exclusão?",
+      "btnY": "Excluir",
+      "btnN": "Cancelar"
+    },
+    "page": {
+      "first": "Primeira",
+      "last": "Última"
+    },
+    "config": {
+      "companies": {
+        "cnpj": "CNPJ",
+        "country": "País",
+        "plantCode": "Plant Code",
+        "consignee": "Consignee",
+        "account": "Conta",
+        "isShow": "Exibir",
+        "cancelBtn": "Cancelar",
+        "saveBtn": "Salvar",
+        "listCompanies": "Listar Empresas",
+        "addCompany": "Adicionar Empresa"
+      },
+      "users": {
+        "title": "Usuários",
+        "registration": "Cadastro",
+        "name": "Nome",
+        "email": "E-mail",
+        "codeSap": "Código SAP",
+        "telephone": "Telefone",
+        "password": "Senha",
+        "pictureProfile": "Foto de Perfil",
+        "profile": "Perfis de acesso",
+        "companies": "Empresas",
+        "settings": "Configurações:",
+        "lastAccess": "Último acesso",
+        "responsibles": "Planejador Responsável",
+        "supplier": "Fornecedor",
+        "secondEmail": "Email Secundário",
+        "expiryDate": "Data de Expiração",
+        "countries": "Países"
+      },
+      "profile": {
+        "title": "Perfil",
+        "selectModuleTitle": "Módulo",
+        "selectModulePlaceHolder": "Escolha o módulo para configurar",
+        "dateRegistration": "Data de Cadastro",
+        "type": "Tipo",
+        "actualProfile": "Atualizar Perfil",
+        "profileActions": "Açoes do Perfil",
+        "newProfile": " Cadastro de novo Perfil.",
+        "nameDoProfile": "Nome do Perfil",
+        "newResponsible": "Cadastro de Responsável"
+      },
+      "carriers": {
+        "desejaRemover": "Deseja remover essa transportadora?",
+        "cancelar": "Cancelar",
+        "salvar": "Salvar",
+        "excluir": "Excluir",
+        "fechar": "Fechar",
+        "listarTransportadoras": "Listar Transportadoras",
+        "criarTransportadora": "Adicionar Transportadora",
+        "editarTransportadora": "Editar Transportadora",
+        "documento": "Documento",
+        "nomeFantasia": "Nome fantasia",
+        "codSap": "Código SAP",
+        "tipoDocumento": "Tipo de documento",
+        "pais": "País",
+        "cep": "CEP",
+        "uf": "UF",
+        "estado": "Estado",
+        "nome": "Nome",
+        "cidade": "Cidade",
+        "bairro": "Bairro",
+        "logradouro": "Logradouro",
+        "numero": "Número",
+        "complemento": "Complemento",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "codigoIBGE": "Código IBGE",
+        "buscar": "Buscar",
+        "editar": "Editar"
+      },
+      "clients": {
+        "desejaRemover": "Deseja remover esse cliente?",
+        "cancelar": "Cancelar",
+        "salvar": "Salvar",
+        "excluir": "Excluir",
+        "fechar": "Fechar",
+        "adicionar": "Adicionar",
+        "listarClientes": "Listar Clientes",
+        "criarCliente": "Adicionar Cliente",
+        "editarCliente": "Editar Cliente",
+        "documento": "Documento",
+        "nomeFantasia": "Nome fantasia",
+        "codPostal": "Código postal",
+        "tipoDocumento": "Tipo de documento",
+        "pais": "País",
+        "cep": "CEP",
+        "uf": "UF",
+        "codSap": "Código SAP",
+        "estado": "Estado",
+        "nome": "Nome",
+        "cidade": "Cidade",
+        "bairro": "Bairro",
+        "logradouro": "Logradouro",
+        "numero": "Número",
+        "complemento": "Complemento",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "codigoIBGE": "Código IBGE",
+        "buscar": "Buscar",
+        "editar": "Editar",
+        "sunday": "Domingo",
+        "monday": "Segunda",
+        "tuesday": "Terça",
+        "wednesday": "Quarta",
+        "thursday": "Quinta",
+        "friday": "Sexta",
+        "saturday": "Sábado"
+      },
+      "transitTimes": {
+        "transportadora": "Transportadora",
+        "transitTime": "Transit Time",
+        "listarTransitTime": "Listar Transit Times",
+        "origem": "Origem",
+        "destino": "Destino",
+        "criarTransitTime": "Adicionar Transit Time",
+        "editarTransitTime": "Editar Transit Time",
+        "tipo": "Tipo",
+        "ufOrigem": "UF origem",
+        "ufDestino": "UF destino",
+        "cidadeOrigem": "Cidade origem",
+        "cidadeDestino": "Cidade destino",
+        "horaDeCorte": "Hora de corte",
+        "validade": "Validade",
+        "peso": "Peso",
+        "contagemFracionado": "Contagem fracionado",
+        "prazoFracionado": "Prazo para fracionado",
+        "contagemLotacao": "Contagem lotação",
+        "prazoLotacao": "Prazo para lotação",
+        "inicio": "Início (dias)",
+        "buscar": "Buscar",
+        "editar": "Editar",
+        "cancelar": "Cancelar",
+        "salvar": "Salvar",
+        "excluir": "Excluir",
+        "fechar": "Fechar",
+        "limparFiltro": "Limpar Filtro",
+        "filtrar": "Filtrar",
+        "filtrarTransit": "Filtrar Transit Time"
+      },
+      "suppliers": {
+        "title": "Fornecedores",
+        "supplier": "Fornecedor",
+        "user": "Usuario",
+        "code": "Código",
+        "userUndefined": "Nenhum Usuário Responsável",
+        "dateExpired": "Data de Expiração",
+        "dateUndefined": "Data não Registrada",
+        "exceptionAsk": "É Exceção?",
+        "back": "Voltar",
+        "update": "Atualizar"
+      }
+    },
+    "routes": {
+      "/config/roles": "Configurações / Perfis",
+      "/config/users": "Configurações / Usuários",
+      "/config/alert-types": "Configurações / Tipos de Alerta",
+      "/config/carriers": "Configurações / Transportadoras",
+      "/config/clients": "Configurações / Clientes",
+      "/config/tracking-transit-times": "Configurações / Tracking - Transit Time",
+      "/config/products": "Configurações / Produtos",
+      "/config/credit-history": "Configurações / Histórico de Crédito",
+      "/config/responsible": "Configurações / Responsável",
+      "/config/justification-type": "Configurações / Tipos de Justificativa",
+      "/config/transit-time": "Configurações / Transit Time",
+      "/management/tracking": "Gestão de Estoque / Movimentação",
+      "/management/snapshot": "Gestão de Estoque / Snapshot",
+      "/comex/importation": "Comex / Importação",
+      "/comex/exportation": "Comex / Exportação"
+    }
+  }
+}

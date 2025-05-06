@@ -1,94 +1,83 @@
-import React, { useCallback, useEffect, useId, useMemo, useRef } from 'react';
-import ModalPortal from '../ModalPortal';
-import * as S from './styles';
+import React, {
+  useEffect,
+  useRef,
+  useCallback,
+  PropsWithChildren,
+} from "react";
+import { keyframes } from "styled-components";
 
-interface CloseButtonProps {
-  onClick: () => void;
-  color?: string;
-  title?: string;
+import * as S from "./styles";
+
+export interface ModalProps extends PropsWithChildren<any> {
+  padding?: string;
+  isOpen: boolean;
+  onClickOutside?: () => void;
 }
 
-interface Props
-  extends React.PropsWithChildren<{
-    isOpen?: boolean;
-    onClickOutside?: () => void;
-  }> {}
+type Props = ModalProps;
 
-export const CloseButton: React.FC<CloseButtonProps> = ({ onClick, color, title }) => (
-  <S.CloseButton type="button" onClick={onClick} dye={color} title={title}>
-    &#x2715;
-  </S.CloseButton>
-);
+export const ModalCloseButton = ({ onClick }: any) => {
+  return (
+    <S.CloseButton onClick={onClick}>
+      <S.CloseIcon />
+    </S.CloseButton>
+  );
+};
 
 export const Modal: React.FC<Props> = ({
   isOpen = false,
   onClickOutside,
   children,
+  ...rest
 }) => {
-  const overlayRef = useRef<HTMLDivElement>(null);
-  const overlayId = useId();
-  const modalRoot = useMemo(() => document.getElementById('modal-root'), []);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const overlayClass = useMemo((): string => {
-    if (!isOpen) return 'modal-overlay';
-    return `modal-overlay open`;
-  }, [isOpen]);
+  const body: HTMLElement = document.getElementsByTagName("body")[0];
+
+  const contentWrapperAnimation = keyframes`
+    0% {
+      transform: scale(0.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  `;
 
   const handleClickOutside = useCallback(
-    (event: MouseEvent): void => {
-      if (!overlayRef.current) return;
-      const node = event.target as Node;
-      const nodeParent = node?.parentElement;
-      if (!nodeParent) return;
-
-      if (nodeParent === overlayRef.current) {
-        onClickOutside?.();
+    (e: any) => {
+      if (
+        (isOpen &&
+          containerRef.current &&
+          e.target.classList.contains("content-wrapper")) ||
+        e.target.classList.contains("modal-overlay")
+      ) {
+        onClickOutside && onClickOutside();
       }
     },
-    [onClickOutside]
+    [containerRef, onClickOutside, isOpen]
   );
 
-  const addNoScroll = useCallback(() => {
-    document.body.classList.add('no-scroll');
-  }, []);
-
-  const removeNoScroll = useCallback(() => {
-    if (!modalRoot) return;
-    const otherOpenModals = Array.from(modalRoot.children)
-      .filter((child) => child.classList.contains('open'))
-      .filter((child) => child.id !== overlayId);
-
-    if (otherOpenModals.length === 0) {
-      document.body.classList.remove('no-scroll');
-    }
-  }, [modalRoot, overlayId]);
-
-  const onToggle = useCallback((): void => {
-    if (isOpen) {
-      addNoScroll();
-      return document.addEventListener('mousedown', handleClickOutside);
-    } else {
-      removeNoScroll();
-      return document.removeEventListener('mousedown', handleClickOutside);
-    }
-  }, [addNoScroll, handleClickOutside, isOpen, removeNoScroll]);
-
   useEffect(() => {
-    onToggle();
-  }, [isOpen, onToggle]);
-
-  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      removeNoScroll();
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
+      body.classList.remove("modal-open");
     };
-  }, [handleClickOutside, removeNoScroll]);
+  }, [body, handleClickOutside]);
+
+  useEffect(() => {
+    if (isOpen) {
+      body.classList.add("modal-open");
+    } else {
+      body.classList.remove("modal-open");
+    }
+  }, [body, isOpen]);
 
   return (
-    <ModalPortal>
-      <S.Overlay id={overlayId} ref={overlayRef} className={overlayClass}>
-        <S.Modal>{children}</S.Modal>
-      </S.Overlay>
-    </ModalPortal>
+    <S.ModalOverlay ref={containerRef} isOpen={isOpen} {...rest}>
+      <S.ContentWrapper animation={contentWrapperAnimation}>
+        {children}
+      </S.ContentWrapper>
+    </S.ModalOverlay>
   );
 };

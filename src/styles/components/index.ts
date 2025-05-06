@@ -5,3 +5,4 @@ export * from './forms';
 export * from './modals';
 export * from './activityIndicators';
 export * from './paginators';
+export * from './optionButton';

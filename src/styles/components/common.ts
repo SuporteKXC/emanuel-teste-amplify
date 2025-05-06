@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Colors } from 'styles/constants';
+import { Colors, Fonts } from 'styles/constants';
 
 export const BasePanelStyle = css`
   display: flex;
@@ -11,3 +11,11 @@ export const BasePanelStyle = css`
 export const BasePanel = styled.div`
   ${BasePanelStyle};
 `;
+
+export const Center = styled.div`
+    font-family: ${Fonts.GilroyBold};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1 / -1;
+`

@@ -1,5 +1,5 @@
 import { FormHandles } from '@unform/core';
-import type { ApiValidationError } from 'contracts/Common';
+// import { ApiValidationError } from "contracts";
 import React from 'react';
 import * as Yup from 'yup';
 
@@ -16,12 +16,15 @@ export const useValidation = () => {
         errors.inner.forEach((er: any) => {
           validationErrors[er.path] = er.message;
         });
-
         ref.current.setErrors(validationErrors);
+
+        if (import.meta.env.NODE_ENV === 'development') {
+          console.warn('VALIDATION ERRORS', validationErrors);
+        }
       }
     },
     handleApiErrors: (
-      errors: ApiValidationError[],
+      errors: any,
       ref: React.RefObject<FormHandles>
     ): void => {
       if (!ref.current) return;

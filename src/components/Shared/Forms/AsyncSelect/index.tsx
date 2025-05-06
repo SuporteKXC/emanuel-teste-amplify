@@ -1,11 +1,11 @@
 import { useField } from '@unform/core';
-import { SelectOption } from 'contracts/Common';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { GroupBase, SelectInstance } from 'react-select';
 import ReactAsyncSelect, {
   AsyncProps as SelectProps,
 } from 'react-select/async';
 import * as S from './styles';
+import { SelectOption } from 'contracts';
 
 interface BaseProps
   extends SelectProps<SelectOption, false, GroupBase<SelectOption>> {}
@@ -95,6 +95,7 @@ export const AsyncSelect: React.FC<Props> = ({
         placeholder={placeholder}
         onChange={handleChange}
         defaultValue={defaultValue}
+        menuPlacement='bottom'
         {...rest}
       />
       <ErrorComponent />
